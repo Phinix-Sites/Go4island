@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KDXFKW9H');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>go4island.com — Alquiler de Coches en España</title>
+  <meta name="description" content="Alquiler de coches en Ibiza, Mallorca, Menorca y Tenerife al mejor precio. Reserva simple, segura y sin depósito.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media=&#39;all&#39;">
+  <link rel="stylesheet" href="tailwind.min.css">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18269685519"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18269685519');
+</script>
+
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; max-width: 100%; overflow-x: hidden; }
+img, video, svg { max-width: 100%; height: auto; }
+a { text-decoration: none; color: inherit; }
+
+:root {
+  --blue: #1d4ed8;
+  --blue-light: #3b82f6;
+  --blue-dark: #1e40af;
+  --yellow: #f59e0b;
+  --dark: #0f172a;
+  --mid: #64748b;
+  --light: #f8fafc;
+  --border: #e2e8f0;
+  --white: #ffffff;
+  --radius: 12px;
+}
+
+/* ===== HEADER ===== */
+/* HEADER */
+#main-header{
+  width:100%;
+  background:#fff;
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* LINHA HEADER */
+.header-top{
+  max-width:1280px;
+  margin:0 auto;
+
+  height:82px; /* altura fixa menor */
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 24px;
+}
+
+/* LOGO */
+.header-logo-wrap img{
+  width:120px; /* diminui bastante */
+  height:auto;
+  object-fit:contain;
+  display:block;
+}
+
+/* NAV */
+.dest-nav{
+  display:flex;
+  align-items:center;
+  gap:34px;
+
+  flex:1;
+  justify-content:center;
+}
+
+.dest-nav a{
+  color:#2563eb;
+  text-decoration:none;
+
+  font-size:1rem;
+  font-weight:600;
+
+  opacity:.9;
+}
+
+/* DIREITA */
+.header-right{
+  display:flex;
+  align-items:center;
+}
+
+/* LANG */
+.lang-btn{
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  gap:6px;
+
+  padding:0 14px;
+
+  border-radius:12px;
+
+  background:transparent;
+  border:1px solid rgba(255,255,255,.25);
+
+  color:#fff;
+}
+
+/* MOBILE */
+@media(max-width:980px){
+
+  .header-top{
+    height:74px;
+    padding:0 16px;
+  }
+
+  .header-logo-wrap img{
+    width:100px;
+  }
+
+  .dest-nav{
+    display:none;
+  }
+}
+
+/* Lang selector */
+.lang-sel { position: relative; }
+.lang-btn {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: #475569;
+  background: none; border: 1px solid var(--border);
+  border-radius: 8px; padding: 7px 12px; cursor: pointer;
+  transition: border-color 0.15s;
+  font-family: system-ui, sans-serif;
+}
+.lang-btn:hover { border-color: var(--blue-light); }
+.lang-menu {
+  position: absolute; right: 0; top: calc(100% + 6px);
+  background: #fff; border: 1px solid var(--border);
+  border-radius: var(--radius); min-width: 140px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: none; z-index: 9999; overflow: hidden;
+}
+.lang-menu.show { display: block; }
+.lang-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: background 0.1s;
+  font-family: system-ui, sans-serif;
+}
+.lang-item:hover { background: var(--light); }
+
+/* Mobile menu */
+#mobileMenu {
+  display: none;
+}
+@media (max-width: 1023px) {
+  #mobileMenu {
+    display: block;
+    position: fixed; inset: 0;
+    background: #fff; z-index: 99999;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+  #mobileMenu.open { transform: none; }
+  .dest-nav { display: none; }
+  .header-top { height: 64px; padding: 0 16px; }
+  .brand-name .main { font-size: 1.1rem; }
+  .btn-reserva { font-size: 0.75rem; padding: 8px 12px; }
+}
+@media (min-width: 1024px) {
+  #mobileMenu { display: none !important; }
+}
+
+/* ===== HERO ===== */
+#hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 340px;
+  padding-top: 82px;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.58) 0%, rgba(0,0,0,0.30) 40%, rgba(0,0,0,0.10) 70%, transparent 100%);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+
+  padding: 10px 24px 10px; /* MENOR */
+
+  display: grid;
+  grid-template-columns: 1fr 400px 190px;
+
+  gap: 0;
+
+  align-items: start; /* IMPORTANTE */
+}
+/* COL 1 — Text */
+.hero-text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  padding: 40px 24px 0 0; /* SOBE */
+}
+.hero-tag {
+  display: inline-block;
+  background: var(--yellow); color: #000;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 4px; margin-bottom: 16px;
+  font-family: system-ui, sans-serif;
+}
+.hero-text h1 {
+  font-size: clamp(2.2rem, 4vw, 3.6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 10px;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.5);
+  letter-spacing: -1px;
+  font-family: system-ui, sans-serif;
+}
+.hero-text .hero-sub {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 1px 8px rgba(0,0,0,0.4);
+  font-family: system-ui, sans-serif;
+}
+
+/* Trust badges on hero */
+.hero-trust {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.trust-item-hero {
+  display: flex;
+  align-items: start;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 0.82rem;
+  font-family: system-ui, sans-serif;
+}
+.trust-item-hero i { font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+
+/* COL 2 — Form (white) */
+.hero-form-wrap {
+  background: #ffffff;
+  padding: 28px 24px 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  margin-top:-35px;
+  position:relative;
+  z-index:20;
+}
+
+.hero-form-wrap h2 {
+  color: #1d4ed8;
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 22px;
+  letter-spacing: 0.3px;
+  font-family: system-ui, sans-serif;
+}
+.form-field { margin-bottom: 12px; }
+.form-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 5px;
+  letter-spacing: 0.3px;
+  font-family: system-ui, sans-serif;
+}
+.form-field select,
+.form-field input {
+  width: 100%;
+  padding: 11px 14px;
+  background: #f5f8ff;
+  border: 1.5px solid #c8d9f5;
+  border-radius: 8px;
+  color: #1a1a2e;
+  font-size: 0.92rem;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: system-ui, sans-serif;
+}
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%231d4ed8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-color: #f5f8ff;
+  padding-right: 32px;
+}
+.form-field select:focus,
+.form-field input:focus { border-color: #1d4ed8; background: #eef3ff; }
+.form-field select option { color: #111; background: #fff; }
+.form-row { display: grid; grid-template-columns: 1fr 110px; gap: 8px; }
+
+.btn-search {
+  width: 100%;
+  padding: 15px;
+  background: #1d4ed8;
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 14px;
+  transition: background 0.2s, transform 0.15s;
+  box-shadow: 0 4px 16px rgba(29,78,216,0.35);
+  font-family: system-ui, sans-serif;
+}
+.btn-search:hover { background: #1e40af; transform: translateY(-1px); }
+
+/* Checkboxes under form */
+.form-meta {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #dde8f8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: #64748b;
+  font-family: system-ui, sans-serif;
+}
+.form-meta label { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+
+/* COL 3 — Stats panel */
+.hero-stats-panel {
+  background: rgba(15,23,42,0.93);
+  padding: 28px 16px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-left: 1px solid rgba(255,255,255,0.06);
+  margin-top:-35px;
+}
+}
+.stars-row { color: #f5a623; font-size: 1.1rem; line-height: 1; }
+.rating-text { font-size: 0.70rem; color: rgba(255,255,255,0.55); margin-bottom: 8px; font-family: system-ui, sans-serif; }
+.stat-block { margin: 4px 0; }
+.stat-number {
+  font-size: 3rem; font-weight: 900;
+  color: #3b82f6; line-height: 1;
+  font-family: system-ui, sans-serif;
+}
+.stat-label { font-size: 0.68rem; font-weight: 600; color: rgba(255,255,255,0.65); letter-spacing: 0.2px; font-family: system-ui, sans-serif; }
+.stat-divider { width: 80%; height: 1px; background: rgba(255,255,255,0.10); margin: 6px 0; }
+.trust-badges { display: flex; justify-content: center; gap: 5px; margin-top: 10px; flex-wrap: wrap; }
+.trust-badge {
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 5px;
+  padding: 3px 7px;
+  font-size: 0.60rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0.6px;
+  font-family: system-ui, sans-serif;
+}
+
+/* ===== RESPONSIVE HERO ===== */
+@media (max-width: 1100px) {
+  .hero-inner {
+    grid-template-columns: 1fr 380px;
+    grid-template-rows: auto auto;
+  }
+  .hero-text { grid-column: 1; grid-row: 1; padding-bottom: 0; justify-content: center; }
+  .hero-form-wrap { grid-column: 1; grid-row: 2; }
+  .hero-stats-panel { grid-column: 2; grid-row: 1 / 3; }
+}
+
+@media (max-width: 767px) {
+  #hero-section { padding-top: 64px; min-height: unset; }
+  .hero-inner {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    gap: 0;
+  }
+  .hero-text { display: none; }
+  .hero-form-wrap {
+    order: 1;
+    padding: 20px 16px 16px;
+    box-shadow: none;
+  }
+  .hero-form-wrap h2 { font-size: 1.15rem; margin-bottom: 16px; }
+  .form-field { margin-bottom: 10px; }
+  .form-row { grid-template-columns: 1fr 100px; gap: 6px; }
+  .btn-search { padding: 14px; font-size: 0.95rem; }
+  .hero-stats-panel { display: none !important; }
+
+  /* Mobile stats carousel */
+  .mobile-stats-carousel {
+    order: 2;
+    display: block !important;
+    background: rgba(15,23,42,0.93);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .msc-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+    width: 100%;
+  }
+  .msc-slide {
+    min-width: 100%; width: 100%;
+    padding: 22px 20px 28px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .msc-dots {
+    display: flex; justify-content: center; gap: 7px;
+    position: absolute; bottom: 8px; left: 0; right: 0;
+  }
+  .msc-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transition: background 0.3s, transform 0.3s; cursor: pointer;
+  }
+  .msc-dot.active { background: #3b82f6; transform: scale(1.3); }
+}
+
+.mobile-stats-carousel { display: none; }
+
+/* ===== AOS ===== */
+[data-reveal] {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+[data-reveal].in { opacity: 1; transform: none; }
+[data-delay="1"] { transition-delay: 0.1s; }
+[data-delay="2"] { transition-delay: 0.2s; }
+[data-delay="3"] { transition-delay: 0.3s; }
+
+/* Counter */
+.counter { font-variant-numeric: tabular-nums; }
+/* MOBILE BUTTON */
+.menu-mobile{
+  display:none;
+
+  background:none;
+  border:none;
+
+  color:#fff;
+
+  font-size:30px;
+  line-height:1;
+
+  cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:980px){
+
+  .menu-mobile{
+    display:block;
+  }
+
+  .dest-nav{
+    display:none;
+  }
+
+}
+@media(max-width:768px){
+
+  #hero-section{
+    padding-top:10px;
+  }
+
+  .hero-inner{
+    padding-top:10px;
+  }
+
+  .hero-form-wrap{
+    margin-top:-25px; /* valor suave */
+  }
+
+  .hero-stats-panel{
+    margin-top:-25px;
+  }
+
+}
+.pay-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 10px;
+}
+
+.pay-item img{
+  height:16px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+  opacity:.9;
+}
+
+/* ===== FLAG SVG ===== */
+.flag-svg {
+  width: 22px;
+  height: 15px;
+  border-radius: 2px;
+  display: inline-block;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+  vertical-align: middle;
+}
+.flag-svg svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.lang-btn .flag-svg {
+  width: 20px;
+  height: 14px;
+}
+.lang-item .flag-svg {
+  width: 22px;
+  height: 15px;
+}
+.mob-lang .flag-svg {
+  width: 20px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* ===== HAMBURGER BUTTON ===== */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+.hamburger-icon span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #1d4ed8;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+#menuBtn:hover .hamburger-icon span {
+  background: #3b82f6;
+}
+</style>
+<link rel="preload" href="logo-rentantilles.webp" as="image" fetchpriority="high">
+<link rel="preload" href="o.webp" as="image" fetchpriority="high">
+</head>
+<body class="font-sans text-gray-900 bg-gray-50 overflow-x-hidden" style="font-family: system-ui, sans-serif;">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDXFKW9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- ===== HEADER ===== -->
+<header id="main-header">
+
+  <div class="header-top">
+
+    <!-- LOGO -->
+    <a href="/" class="header-logo-wrap">
+
+      <img src="logo-rentantilles.webp" alt="go4island.com" width="170" height="70" fetchpriority="high" style="
+          width:170px;
+          height:auto;
+          object-fit:contain;
+          display:block;
+        ">
+
+    </a>
+
+    <!-- NAV -->
+    <nav class="dest-nav" aria-label="Destinos">
+      <a href="ibiza.html" data-i18n="navIbiza">Ibiza</a>
+      <a href="mallorca.html" data-i18n="navMallorca">Mallorca</a>
+      <a href="menorca.html" data-i18n="navMenorca">Menorca</a>
+      <a href="tenerife.html" data-i18n="navTenerife">Tenerife</a>
+    </nav>
+
+    <!-- RIGHT -->
+    <div class="header-right">
+
+      <!-- LANG -->
+      <div class="lang-sel">
+        <button class="lang-btn" id="langBtn">
+          <span class="flag-svg" id="flagEl"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg></span>
+          <span id="codeEl">ES</span>
+          <i class="fa fa-chevron-down" style="font-size:9px;opacity:.5;"></i>
+        </button>
+
+        <div class="lang-menu" id="langMenu">
+          <div class="lang-item" data-lang="es">
+            <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg></span>
+            Español
+          </div>
+          <div class="lang-item" data-lang="en">
+            <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 60 30"><clippath id="a"><path d="M0 0v30h60V0z"/></clipPath><clippath id="b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#a)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#b)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span>
+            English
+          </div>
+          <div class="lang-item" data-lang="fr">
+            <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3 2"><rect width="3" height="2" fill="#ED2939"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/></svg></span>
+            Français
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE -->
+      <button id="menuBtn" class="menu-mobile" aria-label="Menu">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+
+</header>
+
+<!-- ===== MOBILE MENU ===== -->
+<div id="mobileMenu">
+  <div class="flex items-center justify-between px-6 py-4 border-b">
+    <span class="text-lg font-bold" style="color:#1d4ed8;">go4<span style="color:#3b82f6;">island.com</span></span>
+    <button id="closeMenu" class="text-3xl">✕</button>
+  </div>
+  <nav class="flex flex-col p-6 gap-6 text-lg font-medium">
+    <a href="ibiza.html" data-i18n="navIbiza">Ibiza</a>
+    <a href="mallorca.html" data-i18n="navMallorca">Mallorca</a>
+    <a href="menorca.html" data-i18n="navMenorca">Menorca</a>
+    <a href="tenerife.html" data-i18n="navTenerife">Tenerife</a>
+    <a href="legal.html" data-i18n="navConditions">Condiciones</a>
+  </nav>
+  <div class="flex gap-3 px-6 mt-2 flex-wrap">
+    <button class="mob-lang active" data-lang="es" style="font-size:13px;font-weight:600;padding:8px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;">
+      <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg></span> ES
+    </button>
+    <button class="mob-lang" data-lang="en" style="font-size:13px;font-weight:600;padding:8px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;">
+      <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 60 30"><clippath id="c"><path d="M0 0v30h60V0z"/></clipPath><clippath id="d"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#c)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#d)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg></span> EN
+    </button>
+    <button class="mob-lang" data-lang="fr" style="font-size:13px;font-weight:600;padding:8px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;gap:6px;">
+      <span class="flag-svg"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 3 2"><rect width="3" height="2" fill="#ED2939"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/></svg></span> FR
+    </button>
+  </div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="hero-section">
+  <div class="hero-bg">
+    <img loading="lazy" src="o.webp" alt="España" width="1600" height="700" fetchpriority="high" decoding="async">
+  </div>
+
+  <div class="hero-inner">
+
+    <!-- COL 1 — Text -->
+    <div class="hero-text">
+     
+      <h1>
+        <span data-i18n="heroLine1">Alquiler de Coches</span><br>
+        <span data-i18n="heroLine2">al Mejor Precio</span>
+      </h1>
+      <p class="hero-sub" data-i18n="heroSub">Ibiza · Mallorca · Menorca · Tenerife.</p>
+
+      <div class="hero-trust">
+        <div class="trust-item-hero"><i class="fa fa-road"></i><span data-i18n="trustKm">Kilometraje ilimitado</span></div>
+        <div class="trust-item-hero"><i class="fa fa-shield-halved"></i><span data-i18n="trustDeposit">Sin depósito requerido</span></div>
+        <div class="trust-item-hero"><i class="fa fa-star"></i><span data-i18n="trustAxa">Asegurado por AXA</span></div>
+        <div class="trust-item-hero"><i class="fa fa-lock"></i><span data-i18n="trustSecure">Pago seguro Stripe</span></div>
+         <div class="trust-item-hero"><i class="fa fa-lock"></i><span data-i18n="trustfranchise">Franquicia Cero</span></div>
+         <div class="trust-item-hero"><i class="fa fa-lock"></i><span data-i18n="trusthotel">Entrega gratuita en el hotel</span></div>
+      </div>
+    </div>
+
+    <!-- COL 2 — Form -->
+    <div class="hero-form-wrap" id="booking">
+      <h2 data-i18n="bookingTitle">¡Reserva tu coche en 3 minutos!</h2>
+
+      <div class="form-field">
+        <label data-i18n="labelDest">Destino</label>
+        <select id="pickup-location">
+          <option value="" data-i18n="chooseDest">Elige un destino</option>
+          <option value="ibiza.html" data-lieu="Ibiza" data-i18n="navIbiza">🏝️ Ibiza</option>
+          <option value="mallorca.html" data-lieu="Mallorca" data-i18n="navMallorca">🏝️ Mallorca</option>
+          <option value="menorca.html" data-lieu="Menorca" data-i18n="navMenorca">🏝️  Menorca</option>
+          <option value="tenerife.html" data-lieu="Tenerife" data-i18n="navTenerife">🏝️ Tenerife</option>
+        </select>
+      </div>
+
+      <!-- Pickup point — dynamic -->
+      <div class="form-field" id="point-field" style="display:none;">
+        <label data-i18n="labelPoint">Punto de recogida</label>
+        <select id="index-pickup-point">
+          <option value="" data-i18n="choosePoint">Elegir punto</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label data-i18n="labelPickup">Fecha de recogida</label>
+          <input type="date" id="pickup-date">
+        </div>
+        <div class="form-field">
+          <label data-i18n="labelPickupTime">Hora</label>
+          <input type="time" id="pickup-time" value="10:30">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-field">
+          <label data-i18n="labelReturn">Fecha de devolución</label>
+          <input type="date" id="return-date">
+        </div>
+        <div class="form-field">
+          <label data-i18n="labelReturnTime">Hora</label>
+          <input type="time" id="return-time" value="10:30">
+        </div>
+      </div>
+
+      <div class="form-meta">
+        <label>
+          <input type="checkbox" checked="" style="accent-color:#1d4ed8;">
+          <span data-i18n="metaSamePlace">Devolución en el mismo lugar</span>
+        </label>
+         
+      </div>
+
+      <button type="button" id="voir-prix-btn" class="btn-search">
+        <span data-i18n="searchBtn">Ver Precios</span>
+      </button>
+    </div>
+
+    <!-- COL 3 — Stats (desktop) -->
+    <div class="hero-stats-panel">
+
+      <!-- Trustpilot -->
+      <div style="display:flex;justify-content:center;margin-bottom:8px;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <svg height="18" viewbox="0 0 22 22" fill="none"><path d="M11 0l2.7 8.3H22l-7 5.1 2.7 8.3L11 16.6l-6.7 5.1 2.7-8.3-7-5.1h8.3z" fill="#00B67A"/></svg>
+          <span style="font-size:14px;font-weight:700;color:#00B67A;font-family:system-ui;">Trustpilot</span>
+        </div>
+      </div>
+
+      <div class="stars-row">★★★★½</div>
+      <div class="rating-text"><span class="counter" data-count="1248">0</span> valoraciones · <strong style="color:#fff;">4.5/5</strong></div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat-block">
+        <div class="stat-number">4</div>
+        <div class="stat-label" data-i18n="statCities">islas</div>
+      </div>
+
+      <div class="stat-divider"></div>
+
+      <div class="stat-block">
+        <div class="stat-number"><span class="counter" data-count="32">0</span></div>
+        <div class="stat-label" data-i18n="statPoints">puntos de entrega</div>
+      </div>
+
+      <div class="stat-divider"></div>
+
+     <div class="stat-block">
+  <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;">
+    
+    <div class="stat-label" data-i18n="metaAxa">
+      en colaboración con
+    </div>
+
+  <img width="150" height="60" loading="lazy" src="https://epargne-en-ligne.net/images/axa-logo-1024x1024.jpg" alt="AXA" style="
+    height:40px;
+    width:auto;
+    object-fit:contain;
+  ">
+  </div>
+
+      </div>
+
+      <div class="trust-badges">
+        <span class="trust-badge">🔒 SSL</span>
+        <span class="trust-badge">✓ STRIPE</span>
+      </div>
+    </div>
+
+  </div><!-- /hero-inner -->
+</section>
+
+<!-- Mobile stats carousel (only on mobile) -->
+<div class="mobile-stats-carousel" id="mobileStatsCarousel">
+  <div class="msc-track" id="mscTrack">
+    <!-- Slide 1: Trustpilot -->
+    <div class="msc-slide">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+        <svg height="16" viewbox="0 0 22 22" fill="none"><path d="M11 0l2.7 8.3H22l-7 5.1 2.7 8.3L11 16.6l-6.7 5.1 2.7-8.3-7-5.1h8.3z" fill="#00B67A"/></svg>
+        <span style="font-size:13px;font-weight:700;color:#00B67A;font-family:system-ui;">Trustpilot</span>
+      </div>
+      <div style="color:#f5a623;font-size:1.2rem;">★★★★½</div>
+      <div style="font-size:0.8rem;color:rgba(255,255,255,0.75);margin-top:4px;">
+        <span class="counter" data-count="1248">0</span> valoraciones · <strong style="color:#fff;">4.5/5</strong>
+      </div>
+    </div>
+    <!-- Slide 2: Stats -->
+    <div class="msc-slide">
+      <div style="display:flex;align-items:center;justify-content:center;gap:32px;">
+        <div style="text-align:center;">
+          <div style="font-size:2.4rem;font-weight:900;color:#3b82f6;line-height:1;">4</div>
+          <div style="font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.65);" data-i18n="statCities">islas</div>
+        </div>
+        <div style="width:1px;height:40px;background:rgba(255,255,255,0.2);"></div>
+        <div style="text-align:center;">
+          <div style="font-size:2.4rem;font-weight:900;color:#3b82f6;line-height:1;"><span class="counter" data-count="32">0</span></div>
+          <div style="font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.65);" data-i18n="statPoints">puntos de entrega</div>
+        </div>
+      </div>
+    </div>
+    <!-- Slide 3: AXA -->
+    <div class="msc-slide">
+      <img width="150" height="60" loading="lazy" src="https://1000logos.net/wp-content/uploads/2017/12/Axa-Logo-2048x1152.jpg" alt="AXA" style="height:40px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:0.85;margin-bottom:6px;">
+      <div style="font-size:0.85rem;font-weight:700;color:rgba(255,255,255,0.85);" data-i18n="metaAxa">en colaboración con</div>
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.55);margin-top:2px;" data-i18n="trustAxa">Asegurado por AXA</div>
+    </div>
+  </div>
+  <div class="msc-dots" id="mscDots">
+    <span class="msc-dot active"></span>
+    <span class="msc-dot"></span>
+    <span class="msc-dot"></span>
+  </div>
+</div>
+
+<!-- ===== DESTINATIONS ===== -->
+<section class="py-16 lg:py-24 bg-white overflow-hidden" id="destinations">
+  <div class="w-full flex items-center justify-center mb-14">
+    <h2 class="text-blue-700 text-xl lg:text-4xl font-extrabold text-center px-4 tracking-wide" data-i18n="destTitle">
+      Nuestros destinos
+    </h2>
+  </div>
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- IBIZA -->
+      <a href="ibiza.html" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 bg-white block">
+        <div class="h-56 overflow-hidden">
+            <img width="400" height="267" src="https://thenomadvisor.com/wp-content/uploads/2021/01/bestbeachesinibiza.jpg" class="col-span-2 w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Ibiza" loading="lazy">
+           
+        </div>
+        <div class="bg-blue-700 text-white text-center py-4 font-semibold text-lg" data-i18n="destTitleIbiza">
+          Ibiza
+        </div>
+    </a>
+      <!-- MALLORCA -->
+      <a href="mallorca.html" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 bg-white block">
+        <div class="h-56 overflow-hidden">
+            <img width="400" height="267" src="https://a.cdn-hotels.com/gdcs/production1/d1143/a1637bc2-b9d9-4a40-97c1-5ff8e427172f.jpg?impolicy=fcrop&amp;w=1600&amp;h=1066&amp;q=medium" class="col-span-2 w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Mallorca" loading="lazy">
+        </div>
+        <div class="bg-blue-700 text-white text-center py-4 font-semibold text-lg" data-i18n="destTitleMallorca">
+          Mallorca
+        </div>
+      </a>
+
+      <!-- MENORCA -->
+      <a href="menorca.html" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 bg-white block">
+        <div class="h-56 overflow-hidden">
+            <img width="400" height="267" src="https://thfvnext.bing.com/th/id/R.a7ea2c32b3591fa48d2d86e05c212637?rik=yGXOfQMjrJxLsw&amp;pid=ImgRaw&amp;r=0" class="col-span-2 w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Menorca" loading="lazy">
+        </div>
+        <div class="bg-blue-700 text-white text-center py-4 font-semibold text-lg" data-i18n="destTitleMenorca">
+           Menorca
+        </div>
+      </a>
+
+      <!-- TENERIFE -->
+      <a href="tenerife.html" class="group rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition duration-300 bg-white block">
+        <div class="h-56 overflow-hidden">
+            <img width="400" height="267" src="https://www.iberian-escapes.com/images/Las-Americas-Tenerife.jpg" class="col-span-2 w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="Tenerife" loading="lazy">
+          
+          </div>
+        <div class="bg-blue-700 text-white text-center py-4 font-semibold text-lg" data-i18n="destTitleTenerife">
+          Tenerife
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="py-16 lg:py-24 bg-slate-50" id="how-it-works">
+  <div class="max-w-5xl mx-auto px-4">
+
+    <div class="text-center mb-14" data-reveal="">
+      <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-3" data-i18n="howLabel">Proceso</p>
+      <h2 class="text-2xl lg:text-4xl font-extrabold text-gray-900 mb-4" data-i18n="howTitle">Cómo trabajamos</h2>
+      <p class="text-gray-500 text-base max-w-xl mx-auto" data-i18n="howSub">De la reserva a la entrega del coche, todo es simple, transparente y garantizado.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative" data-reveal="" data-delay="1">
+
+      <!-- Linha vertical central (desktop) -->
+      <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-blue-100 -translate-x-1/2"></div>
+
+      <!-- PASSO 1 -->
+      <div class="relative flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-0 mb-12 lg:mb-16">
+        <!-- Esquerda (texto) -->
+        <div class="lg:w-1/2 lg:pr-14 text-center lg:text-right order-2 lg:order-1">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-2" data-i18n="howStep1Label">Paso 1</span>
+          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2" data-i18n="howStep1Title">Reserva online &amp; pago</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="howStep1Text">Elige tu destino, fechas y vehículo. El pago se procesa de forma segura a través de Stripe.</p>
+        </div>
+        <!-- Ícone central -->
+        <div class="order-1 lg:order-2 relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-blue-700 flex items-center justify-center shadow-lg shadow-blue-200">
+          <i class="fa fa-credit-card text-white text-xl"></i>
+        </div>
+        <!-- Direita (vazio desktop) -->
+        <div class="lg:w-1/2 lg:pl-14 order-3"></div>
+      </div>
+
+      <!-- PASSO 2 -->
+      <div class="relative flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-0 mb-12 lg:mb-16">
+        <!-- Esquerda (vazio desktop) -->
+        <div class="lg:w-1/2 lg:pr-14 order-3 lg:order-1"></div>
+        <!-- Ícone central -->
+        <div class="order-1 lg:order-2 relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-blue-700 flex items-center justify-center shadow-lg shadow-blue-200">
+          <i class="fa fa-envelope-open-text text-white text-xl"></i>
+        </div>
+        <!-- Direita (texto) -->
+        <div class="lg:w-1/2 lg:pl-14 text-center lg:text-left order-2 lg:order-3">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-2" data-i18n="howStep2Label">Paso 2</span>
+          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2" data-i18n="howStep2Title">Recibo inmediato por email</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4" data-i18n="howStep2Text">Recibes tu recibo PDF al instante. Tu reserva incluye:</p>
+          <!-- Garantias -->
+          <div class="flex flex-col gap-2 items-center lg:items-start">
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-check text-green-600 text-xs"></i>
+              </span>
+              <span data-i18n="howGuarantee1">0 € de caución</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-check text-green-600 text-xs"></i>
+              </span>
+              <span data-i18n="howGuarantee2">Franquicia incluida gratuita</span>
+            </div>
+            <div class="flex items-center gap-2 text-sm text-gray-700">
+              <span class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                <i class="fa fa-check text-green-600 text-xs"></i>
+              </span>
+              <span data-i18n="howGuarantee3">Seguro AXA incluido</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASSO 3 -->
+      <div class="relative flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-0">
+        <!-- Esquerda (texto) -->
+        <div class="lg:w-1/2 lg:pr-14 text-center lg:text-right order-2 lg:order-1">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-2" data-i18n="howStep3Label">Paso 3</span>
+          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2" data-i18n="howStep3Title">48h antes — contacto del agente</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="howStep3Text">48 horas antes de tu fecha de llegada, recibirás por email el nombre y el contacto del agente local responsable de la entrega de tu coche. Sin sorpresas.</p>
+        </div>
+        <!-- Ícone central -->
+        <div class="order-1 lg:order-2 relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-blue-700 flex items-center justify-center shadow-lg shadow-blue-200">
+          <i class="fa fa-user-tie text-white text-xl"></i>
+        </div>
+        <!-- Direita (vazio desktop) -->
+        <div class="lg:w-1/2 lg:pl-14 order-3"></div>
+      </div>
+
+      <!-- PASSO 4 -->
+      <div class="relative flex flex-col lg:flex-row items-center lg:items-start gap-6 lg:gap-0 mt-12 lg:mt-16">
+        <!-- Esquerda (vazio desktop) -->
+        <div class="lg:w-1/2 lg:pr-14 order-3 lg:order-1"></div>
+        <!-- Ícone central -->
+        <div class="order-1 lg:order-2 relative z-10 flex-shrink-0 w-14 h-14 rounded-full bg-blue-700 flex items-center justify-center shadow-lg shadow-blue-200">
+          <i class="fa fa-car text-white text-xl"></i>
+        </div>
+        <!-- Direita (texto) -->
+        <div class="lg:w-1/2 lg:pl-14 text-center lg:text-left order-2 lg:order-3">
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-blue-600 mb-2" data-i18n="howStep4Label">Paso 4</span>
+          <h3 class="text-lg lg:text-xl font-bold text-gray-900 mb-2" data-i18n="howStep4Title">Recibes el coche</h3>
+          <p class="text-gray-500 text-sm leading-relaxed" data-i18n="howStep4Text">El agente entrega el vehículo en el lugar acordado. Todo listo para tu aventura en las islas.</p>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <!-- CTA -->
+    <div class="text-center mt-14" data-reveal="" data-delay="2">
+      <a href="#booking" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-xl shadow-lg shadow-blue-200 transition text-sm uppercase tracking-widest" data-i18n="howCta">
+        <i class="fa fa-calendar-check"></i>
+        Reservar ahora
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section class="py-14 bg-gray-50" id="Antilles3">
+  <div class="max-w-5xl mx-auto px-4">
+    <div data-reveal="">
+      <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2" data-i18n="featLabel">Plataforma</p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-10" data-i18n="featTitle">¿Por qué go4island?</h2>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 border border-gray-200 rounded-xl overflow-hidden" data-reveal="">
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-bolt"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat1Title">Recogida inmediata</p>
+        <p class="text-sm text-gray-500" data-i18n="feat1Text">Vehículo listo a la salida del aeropuerto, sin esperas.</p>
+      </div>
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-star"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat2Title">Agencias verificadas</p>
+        <p class="text-sm text-gray-500" data-i18n="feat2Text">Solo trabajamos con socios locales certificados.</p>
+      </div>
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-percent"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat3Title">Precio optimizado</p>
+        <p class="text-sm text-gray-500" data-i18n="feat3Text">Comparamos las mejores tarifas en tiempo real.</p>
+      </div>
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-lock"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat4Title">Reserva segura</p>
+        <p class="text-sm text-gray-500" data-i18n="feat4Text">Pago y datos protegidos. Sin cargos ocultos.</p>
+      </div>
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-headset"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat5Title">Soporte 7 días</p>
+        <p class="text-sm text-gray-500" data-i18n="feat5Text">Nuestro equipo responde antes, durante y después del viaje.</p>
+      </div>
+      <div class="bg-white p-7 hover:bg-blue-50 transition">
+        <div class="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center text-blue-700 mb-4"><i class="fa fa-rotate-left"></i></div>
+        <p class="font-bold text-gray-900 mb-1" data-i18n="feat6Title">Cancelación gratuita</p>
+        <p class="text-sm text-gray-500" data-i18n="feat6Text">Cancela sin coste hasta 48h antes de la recogida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAYMENT TICKER ===== -->
+<style>
+.pay-ticker-wrap { background:#f1f3f5; border-top:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0; padding:20px 0; overflow:hidden; }
+.pay-ticker-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:stretch; gap:0; }
+.pay-ticker-label { flex-shrink:0; display:flex; align-items:center; background:#1d4ed8; color:#fff; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:0 16px; border-radius:6px 0 0 6px; white-space:nowrap; z-index:2; font-family:system-ui,sans-serif; }
+.pay-ticker-scroll-wrap { flex:1; overflow:hidden; position:relative; border:1px solid #e2e8f0; border-left:none; border-radius:0 6px 6px 0; background:#fff; }
+.pay-ticker-scroll-wrap::before,.pay-ticker-scroll-wrap::after { content:''; position:absolute; top:0; bottom:0; width:48px; z-index:1; pointer-events:none; }
+.pay-ticker-scroll-wrap::before { left:0; background:linear-gradient(to right,#fff 0%,transparent 100%); }
+.pay-ticker-scroll-wrap::after  { right:0; background:linear-gradient(to left,#fff 0%,transparent 100%); }
+.pay-ticker-track { display:flex; align-items:center; gap:32px; padding:0 24px; height:64px; animation:payTicker 22s linear infinite; width:max-content; }
+.pay-ticker-track:hover { animation-play-state:paused; }
+@keyframes payTicker { 0%{transform:translateX(0);}100%{transform:translateX(-50%);} }
+.pay-item { display:flex; align-items:center; justify-content:center; flex-shrink:0; border:1.5px solid #d1d5db; border-radius:8px; background:#fff; height:42px; padding:0 14px; transition:box-shadow .2s,border-color .2s; }
+.pay-item:hover { border-color:#3b82f6; box-shadow:0 2px 12px rgba(59,130,246,.12); }
+@media(max-width:768px){.pay-ticker-label{font-size:10px;padding:0 10px;}}
+</style>
+<div class="pay-ticker-wrap">
+  <div class="pay-ticker-inner">
+
+    <div class="pay-ticker-label">
+      <span data-i18n="payTitle">Opciones de Pago</span>
+    </div>
+
+    <div class="pay-ticker-scroll-wrap">
+      <div class="pay-ticker-track">
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse4.mm.bing.net/th/id/OIP.VpCh041MJt63E0nqd_nsewHaEK?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Apple Pay">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.4Ti37V8huhUbzG_SqHX-gAHaGB?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Google Pay">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse4.mm.bing.net/th/id/OIP.IvOOjUPSwzj9Zzd9OdS14wHaFj?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Visa">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://th.bing.com/th/id/R.16dbc44d8d44fd6157f722a9674e7b07?rik=%2bO8UCRoEpd6aJA&amp;pid=ImgRaw&amp;r=0" alt="Mastercard">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.C3222CedyFhyZRW3cTngvgHaEK?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Amex">
+        </div>
+
+        <!-- DUPLICATE -->
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse4.mm.bing.net/th/id/OIP.VpCh041MJt63E0nqd_nsewHaEK?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Apple Pay">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.4Ti37V8huhUbzG_SqHX-gAHaGB?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Google Pay">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse4.mm.bing.net/th/id/OIP.IvOOjUPSwzj9Zzd9OdS14wHaFj?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Visa">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://th.bing.com/th/id/R.16dbc44d8d44fd6157f722a9674e7b07?rik=%2bO8UCRoEpd6aJA&amp;pid=ImgRaw&amp;r=0" alt="Mastercard">
+        </div>
+
+        <div class="pay-item">
+          <img width="400" height="267" loading="lazy" src="https://tse3.mm.bing.net/th/id/OIP.C3222CedyFhyZRW3cTngvgHaEK?r=0&amp;rs=1&amp;pid=ImgDetMain&amp;o=7&amp;rm=3" alt="Amex">
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="py-16 lg:py-24 bg-white" id="sobre">
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+  <div data-reveal="">
+  <div class="rounded-xl shadow-lg bg-white p-4">
+    <img width="150" height="60" src="logo-rentantilles.webp" alt="go4island.com" class="w-full object-contain" style="aspect-ratio:4/3;" fetchpriority="high">
+  </div>
+</div>
+
+      <div data-reveal="" data-delay="1">
+        <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2" data-i18n="aboutLabel">Sobre nosotros</p>
+        <h2 class="text-2xl lg:text-4xl font-extrabold text-blue-700 mb-4" data-i18n="aboutTitle">¿Quiénes somos?</h2>
+        <p class="text-sm lg:text-base text-gray-600 mb-6" data-i18n="aboutText">
+          go4island.com es una plataforma de alquiler de coches online que trabaja exclusivamente con agencias locales en Ibiza, Mallorca, Menorca y Tenerife.
+        </p>
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg hover:border-blue-400 transition">
+            <i class="fa fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
+            <div>
+              <p class="font-semibold text-gray-900" data-i18n="ab1Title">Todo incluido</p>
+              <p class="text-sm text-gray-500" data-i18n="ab1Text">Seguro, kilometraje ilimitado y asistencia incluidos.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg hover:border-blue-400 transition">
+            <i class="fa fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
+            <div>
+              <p class="font-semibold text-gray-900" data-i18n="ab2Title">Sin depósito</p>
+              <p class="text-sm text-gray-500" data-i18n="ab2Text">Sin depósito de garantía. Promoción mensual limitada.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3 p-4 border border-gray-200 rounded-lg hover:border-blue-400 transition">
+            <i class="fa fa-circle-check text-emerald-500 mt-1 flex-shrink-0"></i>
+            <div>
+              <p class="font-semibold text-gray-900" data-i18n="ab3Title">Transparencia total</p>
+              <p class="text-sm text-gray-500" data-i18n="ab3Text">El precio que ves es el precio que pagas. Sin sorpresas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="py-14 bg-gray-50" id="avisclient">
+  <div class="max-w-5xl mx-auto px-4">
+    <div data-reveal="">
+      <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2" data-i18n="reviewsLabel">Valoraciones</p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-10" data-i18n="reviewsTitle">Lo que dicen nuestros clientes</h2>
+    </div>
+    <div style="overflow:hidden;" data-reveal="">
+      <div id="avisTrack" style="display:flex;gap:16px;transition:transform 0.45s cubic-bezier(0.4,0,0.2,1);">
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">¡Servicio excelente! Coche en perfectas condiciones, recogida en el aeropuerto de Ibiza sin esperas. Lo recomiendo.</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">ML</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Marie L.</p><p style="font-size:11px;color:#64748b;">Mar 2025 · 🇫🇷</p></div></div>
+        </div>
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">Best car rental experience in Mallorca. No hidden fees, fast pickup at Palma airport, very responsive team.</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">TK</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Tom K.</p><p style="font-size:11px;color:#64748b;">Feb 2025 · 🇬🇧</p></div></div>
+        </div>
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">Reserva muy sencilla, coche de calidad y equipo disponible por WhatsApp. Sin sorpresas en la devolución en Tenerife.</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">JS</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Juan S.</p><p style="font-size:11px;color:#64748b;">Ene 2025 · 🇪🇸</p></div></div>
+        </div>
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">Amazing experience in Menorca. Got the car at the airport in minutes, island roads were a dream. Will book again!</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">SB</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Sarah B.</p><p style="font-size:11px;color:#64748b;">Abr 2025 · 🇬🇧</p></div></div>
+        </div>
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">Atención rápida por WhatsApp. El precio más bajo que encontré para Mallorca. ¡Muy satisfecha!</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">CM</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Carmen M.</p><p style="font-size:11px;color:#64748b;">May 2025 · 🇪🇸</p></div></div>
+        </div>
+        <div style="min-width:300px;flex-shrink:0;background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:22px;">
+          <div style="display:flex;gap:2px;margin-bottom:12px;"><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i><i class="fa fa-star" style="color:#f59e0b;font-size:12px;"></i></div>
+          <p style="font-size:13px;color:#334155;line-height:1.7;margin-bottom:16px;">Très bonne expérience. Voiture propre, service excellent. Je recommande vivement go4island.com.</p>
+          <div style="display:flex;align-items:center;gap:10px;"><div style="width:34px;height:34px;border-radius:50%;background:#1d4ed8;color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;">PD</div><div><p style="font-size:13px;font-weight:600;color:#0f172a;">Pierre D.</p><p style="font-size:11px;color:#64748b;">Jun 2025 · 🇫🇷</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;justify-content:center;margin-top:24px;">
+      <button id="avisPrev" style="width:36px;height:36px;border-radius:50%;border:1px solid #e2e8f0;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;transition:0.15s;" onmouseover="this.style.background=&#39;#1d4ed8&#39;;this.style.color=&#39;#fff&#39;;this.style.borderColor=&#39;#1d4ed8&#39;;" onmouseout="this.style.background=&#39;#fff&#39;;this.style.color=&#39;#64748b&#39;;this.style.borderColor=&#39;#e2e8f0&#39;;"><i class="fa fa-chevron-left"></i></button>
+      <div id="avisDotsWrap" style="display:flex;gap:5px;"></div>
+      <button id="avisNext" style="width:36px;height:36px;border-radius:50%;border:1px solid #e2e8f0;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#64748b;font-size:12px;transition:0.15s;" onmouseover="this.style.background=&#39;#1d4ed8&#39;;this.style.color=&#39;#fff&#39;;this.style.borderColor=&#39;#1d4ed8&#39;;" onmouseout="this.style.background=&#39;#fff&#39;;this.style.color=&#39;#64748b&#39;;this.style.borderColor=&#39;#e2e8f0&#39;;"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUSTPILOT BANNER ===== -->
+<section style="background:#fff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;padding:28px 0;">
+  <div class="max-w-5xl mx-auto px-4">
+    <div style="display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between;background:#f1f5fb;border-radius:12px;padding:24px 28px;">
+      <div style="display:flex;align-items:center;gap:20px;">
+        <div style="width:48px;height:48px;border-radius:50%;background:#e2e8f0;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <i class="fa fa-shield-halved" style="font-size:20px;color:#0f172a;"></i>
+        </div>
+        <div>
+          <h3 style="font-size:17px;font-weight:700;color:#0f172a;margin-bottom:4px;" data-i18n="tpTitle">Confianza para explorar las islas a tu manera</h3>
+          <p style="font-size:13px;color:#64748b;" data-i18n="tpSub">Miles de personas confían en go4island.com para viajar por España.</p>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0;">
+        <div style="display:flex;align-items:center;gap:6px;">
+          <svg height="18" viewbox="0 0 22 22" fill="none"><path d="M11 0l2.7 8.3H22l-7 5.1 2.7 8.3L11 16.6l-6.7 5.1 2.7-8.3-7-5.1h8.3z" fill="#00B67A"/></svg>
+          <span style="font-size:14px;font-weight:700;color:#00B67A;font-family:system-ui;">Trustpilot</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:28px;font-weight:800;color:#0f172a;">4.5</span>
+          <div style="display:flex;gap:2px;">
+            <span style="display:inline-flex;width:28px;height:28px;background:#00B67A;border-radius:3px;align-items:center;justify-content:center;color:#fff;font-size:16px;">★</span>
+            <span style="display:inline-flex;width:28px;height:28px;background:#00B67A;border-radius:3px;align-items:center;justify-content:center;color:#fff;font-size:16px;">★</span>
+            <span style="display:inline-flex;width:28px;height:28px;background:#00B67A;border-radius:3px;align-items:center;justify-content:center;color:#fff;font-size:16px;">★</span>
+            <span style="display:inline-flex;width:28px;height:28px;background:#00B67A;border-radius:3px;align-items:center;justify-content:center;color:#fff;font-size:16px;">★</span>
+            <span style="display:inline-flex;width:28px;height:28px;background:#73cc9e;border-radius:3px;align-items:center;justify-content:center;color:#fff;font-size:16px;">★</span>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#64748b;">
+          <span class="counter" data-count="1248" style="font-weight:700;color:#0f172a;">0</span>
+          <span data-i18n="tpReviews"> Valoraciones • </span><span data-i18n="trustExcellent">Excelente</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-4">
+    <div data-reveal="">
+      <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">FAQ</p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-10" data-i18n="faqTitle">Preguntas frecuentes</h2>
+    </div>
+    <div class="flex flex-col gap-2 max-w-2xl" data-reveal="">
+      <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+        <button class="faq-trigger flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition gap-3">
+          <span class="text-sm font-semibold text-gray-900" data-i18n="faqQ1">¿Qué documentos son necesarios?</span>
+          <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-blue-700 text-xs flex-shrink-0"><i class="fa fa-plus"></i></span>
+        </button>
+        <div class="faq-body hidden px-4 pb-4"><p class="text-sm text-gray-500" data-i18n="faqA1">Carné de conducir válido, documento de identidad y tarjeta de crédito a nombre del conductor.</p></div>
+      </div>
+      <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+        <button class="faq-trigger flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition gap-3">
+          <span class="text-sm font-semibold text-gray-900" data-i18n="faqQ2">¿Cuál es la política de cancelación?</span>
+          <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-blue-700 text-xs flex-shrink-0"><i class="fa fa-plus"></i></span>
+        </button>
+        <div class="faq-body hidden px-4 pb-4"><p class="text-sm text-gray-500" data-i18n="faqA2">Cancelación gratuita hasta 48h antes. Después se aplica una tarifa de un día de alquiler.</p></div>
+      </div>
+      <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+        <button class="faq-trigger flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition gap-3">
+          <span class="text-sm font-semibold text-gray-900" data-i18n="faqQ3">¿Puedo modificar mi reserva?</span>
+          <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-blue-700 text-xs flex-shrink-0"><i class="fa fa-plus"></i></span>
+        </button>
+        <div class="faq-body hidden px-4 pb-4"><p class="text-sm text-gray-500" data-i18n="faqA3">Sí. Nuestro equipo está disponible vía WhatsApp o email para cualquier cambio.</p></div>
+      </div>
+      <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+        <button class="faq-trigger flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition gap-3">
+          <span class="text-sm font-semibold text-gray-900" data-i18n="faqQ4">¿Hay restricciones de edad?</span>
+          <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-blue-700 text-xs flex-shrink-0"><i class="fa fa-plus"></i></span>
+        </button>
+        <div class="faq-body hidden px-4 pb-4"><p class="text-sm text-gray-500" data-i18n="faqA4">El conductor principal debe tener entre 18 y 69 años con carné válido.</p></div>
+      </div>
+      <div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+        <button class="faq-trigger flex justify-between items-center w-full p-4 text-left bg-white hover:bg-gray-50 transition gap-3">
+          <span class="text-sm font-semibold text-gray-900" data-i18n="faqQ6">¿Está incluido el seguro?</span>
+          <span class="faq-icon w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-blue-700 text-xs flex-shrink-0"><i class="fa fa-plus"></i></span>
+        </button>
+        <div class="faq-body hidden px-4 pb-4"><p class="text-sm text-gray-500" data-i18n="faqA6">Sí, seguro a todo riesgo incluido en todas nuestras ofertas.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="py-14 bg-gray-50" id="contact">
+  <div class="max-w-5xl mx-auto px-4">
+    <div data-reveal="">
+      <p class="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2" data-i18n="contactLabel">Contacto</p>
+      <h2 class="text-2xl lg:text-3xl font-bold text-gray-900 mb-2" data-i18n="contactTitle">Contáctenos</h2>
+      <p class="text-sm text-gray-500 mb-10" data-i18n="contactSub">Equipo disponible 7 días a la semana.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-reveal="">
+      <div class="border border-gray-200 rounded-xl p-7 bg-white hover:border-blue-400 transition">
+        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fa fa-location-dot text-blue-700 text-sm"></i>
+          <span data-i18n="contactAddrTitle">Dirección</span>
+        </h3>
+        <div class="text-sm text-gray-500 leading-relaxed">
+          <strong class="text-gray-800">go4island.com — Aeropuerto de Málaga-Costa del Sol</strong><br>
+        </div>
+      </div>
+      <div class="border border-gray-200 rounded-xl p-7 bg-white hover:border-blue-400 transition">
+        <h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+          <i class="fa fa-address-book text-blue-700 text-sm"></i>
+          <span data-i18n="contactContactsTitle">Contactos</span>
+        </h3>
+        <div class="flex flex-col gap-3 text-sm text-gray-500">
+          <p><strong class="text-gray-800" data-i18n="contactPhone">Teléfono:</strong><br><a href="tel:+34 664 2982 04" class="text-blue-700 font-medium">+34 664 2982 04</a></p>
+          <p><strong class="text-gray-800" data-i18n="contactEmail">Email:</strong><br><a href="mailto:contact@go4island.com" class="text-blue-700 font-medium">contact@go4island.com</a></p>
+          <a href="https://wa.me/34664298204" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition mt-1" style="width:fit-content;">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:#0f172a;color:rgba(255,255,255,0.5);padding:48px 0 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;gap:36px;grid-template-columns:1.5fr 1fr 1fr;">
+    <div>
+      <img width="150" height="60" loading="lazy" src="logo-rentantilles.webp" alt="go4island.com" style="height:40px;margin-bottom:12px;filter:brightness(0) invert(1) opacity(0.85);" fetchpriority="high">
+      <p style="font-size:13px;line-height:1.6;max-width:240px;">© 2024 go4island.com<br>go4island.com</p>
+    </div>
+    <div>
+      <h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;" data-i18n="footerRental">Alquiler</h4>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="ibiza.html" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="navIbiza"> Ibiza</a></li>
+        <li><a href="mallorca.html" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="navMallorca"> Mallorca</a></li>
+        <li><a href="menorca.html" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="navMenorca"> Menorca</a></li>
+        <li><a href="tenerife.html" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="navTenerife"> Tenerife</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:14px;" data-i18n="footerHelp">Información</h4>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="#avisclient" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="footerReviews">Valoraciones</a></li>
+        <li><a href="#contact" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="footerContact">Contacto</a></li>
+        <li><a href="legal.html" style="font-size:13px;color:rgba(255,255,255,0.5);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.5)&#39;;" data-i18n="navConditions">Condiciones</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="max-width:1200px;margin:36px auto 0;padding:18px 24px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;font-size:12px;">
+    <span>© 2024 go4island.com</span>
+    <a href="legal.html" style="color:rgba(255,255,255,0.4);transition:color 0.15s;" onmouseover="this.style.color=&#39;#fff&#39;;" onmouseout="this.style.color=&#39;rgba(255,255,255,0.4)&#39;;" data-i18n="footerLegal">Aviso legal y condiciones de uso</a>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/34664298204" target="_blank" rel="noopener" id="wafab" aria-label="WhatsApp" style="position:fixed;bottom:20px;right:20px;width:52px;height:52px;border-radius:50%;background:#22c55e;color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;z-index:200;box-shadow:0 4px 20px rgba(34,197,94,0.4);transition:transform 0.15s;" onmouseover="this.style.transform=&#39;scale(1.08)&#39;;" onmouseout="this.style.transform=&#39;scale(1)&#39;;">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===== TRANSLATIONS ===== -->
+<script>
+window.translations = {
+  en: {
+    navIbiza:"Cars in Ibiza", navMallorca:"Cars in Mallorca", navMenorca:"Cars in Menorca", navTenerife:"Cars in Tenerife", navConditions:"Terms",
+    heroBadge:"No Deposit — Limited Promotion",
+    heroLine1:"Car Rental", heroLine2:"at the Best Price",
+    heroSub:"Ibiza · Mallorca · Menorca · Tenerife. Simple, secure and transparent online booking.",
+    bookingTitle:"Book your car in 3 minutes!",
+    labelDest:"Destination", chooseDest:"Choose a destination",
+    labelPickup:"Pickup date", labelPickupTime:"Time",
+    labelReturn:"Return date", labelReturnTime:"Time",
+    searchBtn:"See Prices",
+    metaSamePlace:"Return to same location", metaAge:"Driver aged 18–69",
+    trustKm:"Unlimited mileage", trustDeposit:"No deposit required",
+    trustAxa:"Insured by AXA", trustSecure:"Secure Stripe payment",
+    trusthotel:"Free Hotel Delivery", trustfranchise:"Zero Deductible",
+    statCities:"islands", statPoints:"pickup points",
+    destTitle:"Our destinations",
+    destTitleIbiza:"Cars in Ibiza", destTitleMallorca:"Cars in Mallorca",
+    destTitleMenorca:"Cars in Menorca", destTitleTenerife:"Cars in Tenerife",
+    featLabel:"Platform", featTitle:"Why go4island.com?",
+    feat1Title:"Instant pickup", feat1Text:"Vehicle ready as soon as you exit the airport.",
+    feat2Title:"Verified agencies", feat2Text:"We only work with certified local partners.",
+    feat3Title:"Optimised price", feat3Text:"We compare the best rates for you in real time.",
+    feat4Title:"Secure booking", feat4Text:"Protected payment and data. No hidden fees.",
+    feat5Title:"7-day support", feat5Text:"Our team responds before, during and after the trip.",
+    feat6Title:"Free cancellation", feat6Text:"Cancel at no cost up to 48h before pickup.",
+    aboutLabel:"About us", aboutTitle:"Who are we?",
+    aboutText:"go4island.com is an online car rental platform working exclusively with local agencies in Ibiza, Mallorca, Menorca and Tenerife.",
+    ab1Title:"All inclusive", ab1Text:"Insurance, unlimited mileage and roadside assistance included.",
+    ab2Title:"No deposit", ab2Text:"No security deposit required. Limited monthly promotion.",
+    ab3Title:"Full transparency", ab3Text:"The price you see is the price you pay. No surprises.",
+    reviewsLabel:"Reviews", reviewsTitle:"What our customers say",
+    payTitle:"Payment Options",
+    tpTitle:"Confidence to explore the islands your way",
+    tpSub:"Thousands of people trust go4island.com to travel across Spain.",
+    tpReviews:" Reviews • ", trustExcellent:"Excellent",
+    faqTitle:"Frequently asked questions",
+    faqQ1:"What documents are required?", faqA1:"Valid driver's licence, ID document and credit card in the driver's name.",
+    faqQ2:"What is the cancellation policy?", faqA2:"Free cancellation up to 48h before. After that, a one-day rental fee applies.",
+    faqQ3:"Can I modify my booking?", faqA3:"Yes. Our team is available via WhatsApp or email.",
+    faqQ4:"Are there age restrictions?", faqA4:"The main driver must be between 18 and 69 with a valid licence.",
+    faqQ6:"Is insurance included?", faqA6:"Yes, comprehensive insurance is included in all our offers.",
+    contactLabel:"Contact", contactTitle:"Get in touch", contactSub:"Team available 7 days a week.",
+    contactAddrTitle:"Address", contactContactsTitle:"Contacts",
+    contactPhone:"Phone:", contactEmail:"Email:",
+    footerRental:"Car Rental", footerHelp:"Information",
+    footerReviews:"Reviews", footerContact:"Contact",
+    footerLegal:"Legal notice and terms of use",
+    labelPoint:"Pickup location", choosePoint:"Choose location",
+    metaAxa:"in partnership with",
+    point_ibz_airport:"Ibiza Airport", point_ibz_port:"Ibiza Harbour",
+    point_ibz_center:"Ibiza Town Centre", point_ibz_santa_eulalia:"Santa Eulalia del Río",
+    point_pmia_airport:"Palma Airport (Mallorca)", point_pmia_port:"Palma Harbour",
+    point_pmia_center:"Palma City Centre", point_pmia_alcudia:"Alcúdia",
+    point_mah_airport:"Menorca Airport (Mahón)", point_mah_port:"Mahón Harbour",
+    point_mah_ciudadela:"Ciutadella de Menorca", point_mah_center:"Mahón City Centre",
+    point_tfs_south:"Tenerife South Airport (TFS)", point_tfn_north:"Tenerife North Airport (TFN)",
+    point_tfs_santa_cruz:"Santa Cruz de Tenerife", point_tfs_costa_adeje:"Costa Adeje",
+    point_hotel:"Hotel Delivery",
+    howLabel:"Process", howTitle:"How we work",
+    howSub:"From booking to car delivery, everything is simple, transparent and guaranteed.",
+    howStep1Label:"Step 1", howStep1Title:"Online booking & payment",
+    howStep1Text:"Choose your destination, dates and vehicle. Payment is processed securely via Stripe.",
+    howStep2Label:"Step 2", howStep2Title:"Instant email receipt",
+    howStep2Text:"You receive your PDF receipt instantly. Your booking includes:",
+    howGuarantee1:"€0 deposit", howGuarantee2:"Free zero deductible", howGuarantee3:"AXA insurance included",
+    howStep3Label:"Step 3", howStep3Title:"48h before — agent contact",
+    howStep3Text:"48 hours before your arrival date, you will receive by email the name and contact of the local agent responsible for delivering your car. No surprises.",
+    howStep4Label:"Step 4", howStep4Title:"Receive your car",
+    howStep4Text:"The agent delivers the vehicle at the agreed location. All set for your island adventure.",
+    howCta:"Book now"
+  },
+  fr: {
+    navIbiza:"Cars in Ibiza", navMallorca:"Cars in Mallorca", navMenorca:"Cars in Menorca", navTenerife:"Cars in Tenerife", navConditions:"Conditions",
+    heroBadge:"Sans Caution — Promotion Limitée",
+    heroLine1:"Location de Voitures", heroLine2:"au Meilleur Prix",
+    heroSub:"Ibiza · Majorque · Minorque · Tenerife. Réservation en ligne simple, sécurisée et transparente.",
+    bookingTitle:"Réservez votre voiture en 3 minutes !",
+    labelDest:"Destination", chooseDest:"Choisissez une destination",
+    labelPickup:"Date de prise en charge", labelPickupTime:"Heure",
+    labelReturn:"Date de retour", labelReturnTime:"Heure",
+    searchBtn:"Voir les Prix",
+    metaSamePlace:"Retour au même endroit", metaAge:"Conducteur 18–69 ans",
+    trustKm:"Kilométrage illimité", trustDeposit:"Aucune caution demandée",
+    trustAxa:"Assuré par AXA", trustSecure:"Paiement sécurisé Stripe",
+    trusthotel:"Livraison hôtel gratuite", trustfranchise:"Franchise Zéro",
+    statCities:"îles", statPoints:"points de livraison",
+    destTitle:"Nos destinations",
+    destTitleIbiza:"Cars in Ibiza", destTitleMallorca:"Cars in Mallorca",
+    destTitleMenorca:"Cars in Menorca", destTitleTenerife:"Cars in Tenerife",
+    featLabel:"Plateforme", featTitle:"Pourquoi go4island.com ?",
+    feat1Title:"Prise en charge immédiate", feat1Text:"Votre véhicule est prêt dès la sortie de l'aéroport.",
+    feat2Title:"Agences vérifiées", feat2Text:"Nous travaillons uniquement avec des partenaires locaux certifiés.",
+    feat3Title:"Prix optimisé", feat3Text:"Nous comparons les meilleures tarifs en temps réel.",
+    feat4Title:"Réservation sécurisée", feat4Text:"Paiement et données protégés. Aucun frais caché.",
+    feat5Title:"Support 7 jours", feat5Text:"Notre équipe répond avant, pendant et après le voyage.",
+    feat6Title:"Annulation gratuite", feat6Text:"Annulez sans frais jusqu'à 48h avant la prise en charge.",
+    aboutLabel:"À propos", aboutTitle:"Qui sommes-nous ?",
+    aboutText:"go4island.com est une plateforme de location de voitures en ligne travaillant exclusivement avec des agences locales à Ibiza, Majorque, Minorque et Tenerife.",
+    ab1Title:"Tout inclus", ab1Text:"Assurance, kilométrage illimité et assistance routière inclus.",
+    ab2Title:"Sans caution", ab2Text:"Aucun dépôt de garantie requis. Promotion mensuelle limitée.",
+    ab3Title:"Transparence totale", ab3Text:"Le prix affiché est le prix payé. Aucune surprise.",
+    reviewsLabel:"Avis", reviewsTitle:"Ce que disent nos clients",
+    payTitle:"Options de paiement",
+    tpTitle:"La confiance pour explorer les îles à votre façon",
+    tpSub:"Des milliers de personnes font confiance à go4island.com pour voyager en Espagne.",
+    tpReviews:" Avis • ", trustExcellent:"Excellent",
+    faqTitle:"Questions fréquentes",
+    faqQ1:"Quels documents sont nécessaires ?", faqA1:"Permis de conduire valide, pièce d'identité et carte de crédit au nom du conducteur.",
+    faqQ2:"Quelle est la politique d'annulation ?", faqA2:"Annulation gratuite jusqu'à 48h avant. Ensuite, des frais d'une journée s'appliquent.",
+    faqQ3:"Puis-je modifier ma réservation ?", faqA3:"Oui. Notre équipe est disponible via WhatsApp ou email.",
+    faqQ4:"Y a-t-il des restrictions d'âge ?", faqA4:"Le conducteur principal doit avoir entre 18 et 69 ans avec un permis valide.",
+    faqQ6:"L'assurance est-elle incluse ?", faqA6:"Oui, l'assurance tous risques est incluse dans toutes nos offres.",
+    contactLabel:"Contact", contactTitle:"Contactez-nous", contactSub:"Équipe disponible 7 jours sur 7.",
+    contactAddrTitle:"Adresse", contactContactsTitle:"Contacts",
+    contactPhone:"Téléphone :", contactEmail:"Email :",
+    footerRental:"Location", footerHelp:"Informations",
+    footerReviews:"Avis clients", footerContact:"Contact",
+    footerLegal:"Mentions légales et conditions d'utilisation",
+    labelPoint:"Lieu de prise en charge", choosePoint:"Choisir un lieu",
+    metaAxa:"en partenariat avec",
+    point_ibz_airport:"Aéroport d'Ibiza", point_ibz_port:"Port d'Ibiza",
+    point_ibz_center:"Centre d'Ibiza", point_ibz_santa_eulalia:"Santa Eulalia del Río",
+    point_pmia_airport:"Aéroport de Palma (Majorque)", point_pmia_port:"Port de Palma",
+    point_pmia_center:"Centre de Palma", point_pmia_alcudia:"Alcúdia",
+    point_mah_airport:"Aéroport de Minorque (Mahón)", point_mah_port:"Port de Mahón",
+    point_mah_ciudadela:"Ciutadella de Menorca", point_mah_center:"Centre de Mahón",
+    point_tfs_south:"Aéroport Sud Tenerife (TFS)", point_tfn_north:"Aéroport Nord Tenerife (TFN)",
+    point_tfs_santa_cruz:"Santa Cruz de Tenerife", point_tfs_costa_adeje:"Costa Adeje",
+    point_hotel:"Livraison à l'hôtel",
+    howLabel:"Processus", howTitle:"Comment nous travaillons",
+    howSub:"De la réservation à la livraison du véhicule, tout est simple, transparent et garanti.",
+    howStep1Label:"Étape 1", howStep1Title:"Réservation en ligne & paiement",
+    howStep1Text:"Choisissez votre destination, vos dates et votre véhicule. Le paiement est traité en toute sécurité via Stripe.",
+    howStep2Label:"Étape 2", howStep2Title:"Reçu immédiat par email",
+    howStep2Text:"Vous recevez votre reçu PDF instantanément. Votre réservation comprend :",
+    howGuarantee1:"0 € de caution", howGuarantee2:"Franchise incluse gratuite", howGuarantee3:"Assurance AXA incluse",
+    howStep3Label:"Étape 3", howStep3Title:"48h avant — contact de l'agent",
+    howStep3Text:"48 heures avant votre date d'arrivée, vous recevrez par email le nom et le contact de l'agent local responsable de la remise de votre voiture. Sans surprises.",
+    howStep4Label:"Étape 4", howStep4Title:"Vous récupérez la voiture",
+    howStep4Text:"L'agent livre le véhicule à l'endroit convenu. Tout est prêt pour votre aventure sur les îles.",
+    howCta:"Réserver maintenant"
+  }
+};
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const flagsSVG = {
+    es: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/></svg>',
+    en: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><clipPath id="ea"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="eb"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#ea)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#eb)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>',
+    fr: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="2" fill="#ED2939"/><rect width="2" height="2" fill="#fff"/><rect width="1" height="2" fill="#002395"/></svg>'
+  };
+  const codes  = {es:'ES',  en:'EN',  fr:'FR'};
+  let lang = 'es'; // sempre espanhol por defeito
+
+  // Spanish base texts (used when switching back to ES)
+  const esBase = {};
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    esBase[el.dataset.i18n] = el.textContent;
+  });
+
+  function setLang(l) {
+    lang = l;
+    localStorage.setItem('lang', l);
+    document.documentElement.lang = l;
+    const t = l === 'es' ? esBase : (window.translations[l] || esBase);
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+    document.getElementById('flagEl').innerHTML = flagsSVG[l];
+    document.getElementById('codeEl').textContent = codes[l];
+    document.querySelectorAll('.mob-lang').forEach(b => {
+      b.style.background = b.dataset.lang === l ? '#1d4ed8' : '#fff';
+      b.style.color = b.dataset.lang === l ? '#fff' : '#1a1a1a';
+      b.style.borderColor = b.dataset.lang === l ? '#1d4ed8' : '#e2e8f0';
+    });
+  }
+
+  // Desktop lang
+  const lBtn  = document.getElementById('langBtn');
+  const lMenu = document.getElementById('langMenu');
+  lBtn.addEventListener('click', e => { e.stopPropagation(); lMenu.classList.toggle('show'); });
+  document.addEventListener('click', () => lMenu.classList.remove('show'));
+  document.querySelectorAll('.lang-item').forEach(el => {
+    el.addEventListener('click', () => { setLang(el.dataset.lang); lMenu.classList.remove('show'); });
+  });
+  // Mobile lang
+  document.querySelectorAll('.mob-lang').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  setLang(lang);
+
+  // Mobile menu
+  const menuBtn   = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const closeMenu = document.getElementById('closeMenu');
+  menuBtn.addEventListener('click', () => { mobileMenu.classList.add('open'); document.body.style.overflow='hidden'; });
+  closeMenu.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow=''; });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { mobileMenu.classList.remove('open'); document.body.style.overflow=''; }));
+
+  // Dates
+  const minDate = '2026-07-15';
+  ['pickup-date','return-date'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.min = minDate; if (!el.value) el.value = minDate; }
+  });
+
+  // Pickup points
+  const pointsData = {
+    "ibiza.html": [
+      { key:"point_ibz_airport", fallback:"Aeropuerto de Ibiza" },
+      { key:"point_ibz_port", fallback:"Puerto de Ibiza" },
+      { key:"point_ibz_center", fallback:"Centro de Ibiza" },
+      { key:"point_ibz_santa_eulalia", fallback:"Santa Eulalia del Río" },
+      { key:"point_hotel", fallback:"Entrega en el Hotel" }
+    ],
+    "mallorca.html": [
+      { key:"point_pmia_airport", fallback:"Aeropuerto de Palma (Mallorca)" },
+      { key:"point_pmia_port", fallback:"Puerto de Palma" },
+      { key:"point_pmia_center", fallback:"Centro de Palma" },
+      { key:"point_pmia_alcudia", fallback:"Alcúdia" },
+      { key:"point_hotel", fallback:"Entrega en el Hotel" }
+    ],
+    "menorca.html": [
+      { key:"point_mah_airport", fallback:"Aeropuerto de Menorca (Mahón)" },
+      { key:"point_mah_port", fallback:"Puerto de Mahón" },
+      { key:"point_mah_ciudadela", fallback:"Ciutadella de Menorca" },
+      { key:"point_mah_center", fallback:"Centro de Mahón" },
+      { key:"point_hotel", fallback:"Entrega en el Hotel" }
+    ],
+    "tenerife.html": [
+      { key:"point_tfs_south", fallback:"Aeropuerto Sur Tenerife (TFS)" },
+      { key:"point_tfn_north", fallback:"Aeropuerto Norte Tenerife (TFN)" },
+      { key:"point_tfs_santa_cruz", fallback:"Santa Cruz de Tenerife" },
+      { key:"point_tfs_costa_adeje", fallback:"Costa Adeje" },
+      { key:"point_hotel", fallback:"Entrega en el Hotel" }
+    ]
+  };
+
+  const destSel    = document.getElementById('pickup-location');
+  const pointField = document.getElementById('point-field');
+  const pointSel   = document.getElementById('index-pickup-point');
+
+  function loadPoints(city) {
+    const points = pointsData[city] || [];
+    pointSel.innerHTML = `<option value="" data-i18n="choosePoint">Elegir punto</option>`;
+    points.forEach(p => {
+      const option = document.createElement('option');
+      option.value = p.key;
+      option.setAttribute('data-i18n', p.key);
+      option.textContent = p.fallback;
+      pointSel.appendChild(option);
+    });
+    setLang(lang);
+  }
+
+  destSel.addEventListener('change', function() {
+    const val = this.value;
+    if (!val || !pointsData[val]) { pointField.style.display='none'; return; }
+    loadPoints(val);
+    pointField.style.display = 'block';
+  });
+
+  // Search button
+  document.getElementById('voir-prix-btn').addEventListener('click', () => {
+    const sel = document.getElementById('pickup-location');
+    if (!sel.value) { alert(window.translations[lang]?.chooseDest || 'Escolha um destino.'); return; }
+    const pd   = document.getElementById('pickup-date').value;
+    const rd   = document.getElementById('return-date').value;
+    const pt   = document.getElementById('pickup-time').value || '10:30';
+    const rt   = document.getElementById('return-time').value || '10:30';
+    const lieu = sel.options[sel.selectedIndex].dataset.lieu || '';
+    const point = pointSel?.value || '';
+    window.location.href = `${sel.value}?pickup=${pd}&return=${rd}&depart=${encodeURIComponent(lieu)}&point=${encodeURIComponent(point)}&pickupTime=${encodeURIComponent(pt)}&returnTime=${encodeURIComponent(rt)}`;
+  });
+
+  // Counters
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 1500;
+    const step = target / (duration / 16);
+    let current = 0;
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) { el.textContent = target.toLocaleString('pt-PT'); clearInterval(timer); }
+      else el.textContent = Math.floor(current).toLocaleString('pt-PT');
+    }, 16);
+  }
+  const counterObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObs.unobserve(e.target); } });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.counter[data-count]').forEach(el => counterObs.observe(el));
+
+  // FAQ
+  document.querySelectorAll('.faq-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const body = item.querySelector('.faq-body');
+      const icon = item.querySelector('.faq-icon i');
+      const isOpen = !body.classList.contains('hidden');
+      document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon i').forEach(i => { i.className='fa fa-plus'; });
+      if (!isOpen) { body.classList.remove('hidden'); icon.className='fa fa-minus'; }
+    });
+  });
+
+  // Reviews slider
+  const track    = document.getElementById('avisTrack');
+  const dotsWrap = document.getElementById('avisDotsWrap');
+  const cards    = track ? [...track.querySelectorAll('[style*="min-width:300px"]')] : [];
+  let cur = 0;
+
+  function perView() {
+    if (window.innerWidth < 500) return 1;
+    if (window.innerWidth < 900) return 2;
+    return 3;
+  }
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const total = Math.ceil(cards.length / perView());
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('div');
+      d.style.cssText = `width:${i===0?'18px':'6px'};height:6px;border-radius:3px;background:${i===0?'#1d4ed8':'#e2e8f0'};cursor:pointer;transition:.2s;`;
+      d.addEventListener('click', () => goToSlide(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goToSlide(n) {
+    const pv = perView();
+    const total = Math.ceil(cards.length / pv);
+    cur = Math.max(0, Math.min(n, total - 1));
+    const w = (cards[0]?.offsetWidth || 300) + 16;
+    track.style.transform = `translateX(-${cur * pv * w}px)`;
+    [...dotsWrap.children].forEach((d,i) => {
+      d.style.width = i===cur?'18px':'6px';
+      d.style.background = i===cur?'#1d4ed8':'#e2e8f0';
+    });
+  }
+  buildDots();
+  document.getElementById('avisPrev')?.addEventListener('click', () => goToSlide(cur-1));
+  document.getElementById('avisNext')?.addEventListener('click', () => goToSlide(cur+1));
+  let autoSlide = setInterval(() => goToSlide((cur+1) % Math.ceil(cards.length/perView())), 5000);
+  track?.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  track?.addEventListener('mouseleave', () => { autoSlide = setInterval(() => goToSlide((cur+1)%Math.ceil(cards.length/perView())),5000); });
+  window.addEventListener('resize', () => { buildDots(); goToSlide(0); }, {passive:true});
+
+  // Reveal on scroll
+  const revEls = document.querySelectorAll('[data-reveal]');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revEls.forEach(el => obs.observe(el));
+  } else {
+    revEls.forEach(el => el.classList.add('in'));
+  }
+
+});
+
+// Mobile stats carousel
+(function() {
+  function initCarousel() {
+    const track = document.getElementById('mscTrack');
+    const dots  = document.querySelectorAll('.msc-dot');
+    if (!track || !dots.length) return;
+    const slides = track.children.length;
+    let current = 0, timer;
+    function goTo(i) {
+      current = (i + slides) % slides;
+      track.style.transform = 'translateX(-' + (current * 100) + '%)';
+      dots.forEach((d,idx) => d.classList.toggle('active', idx===current));
+    }
+    function startAuto() { timer = setInterval(() => goTo(current+1), 3000); }
+    function stopAuto()  { clearInterval(timer); }
+    let startX = 0;
+    track.parentElement.addEventListener('touchstart', e => { startX=e.touches[0].clientX; stopAuto(); }, {passive:true});
+    track.parentElement.addEventListener('touchend', e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (diff>40) goTo(current+1); else if(diff<-40) goTo(current-1);
+      startAuto();
+    }, {passive:true});
+    dots.forEach((d,i) => d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); }));
+    startAuto();
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', initCarousel);
+  else initCarousel();
+})();
+</script>
+
+</body>
+</html>

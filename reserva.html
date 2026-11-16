@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KDXFKW9H');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reserva — go4island.com</title>
+<link rel="stylesheet" href="tailwind.min.css">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<style>
+    .bg-gradient {
+        background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+    }
+    .shadow-soft {
+        box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
+    }
+    .input-focus:focus {
+        border-color: #facc15;
+        box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.35);
+    }
+
+    /* ── NAV ── */
+    :root {
+      --blue: #1d4ed8; --blue-light: #3b82f6;
+      --dark: #0f172a; --mid: #64748b;
+      --light: #f8fafc; --border: #e2e8f0;
+      --radius: 12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    nav.res-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      height: 70px; font-family: 'Inter', system-ui, sans-serif;
+    }
+    .res-nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 20px;
+      height: 100%; display: flex; align-items: center; position: relative;
+    }
+    .res-logo {
+      position: absolute; left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .res-logo img { height: 56px; width: auto; }
+
+    /* Hamburger */
+    .res-hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 8px; flex-shrink: 0;
+    }
+    .res-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #1a1a1a; border-radius: 2px; transition: 0.25s;
+    }
+    .res-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .res-hamburger.open span:nth-child(2) { opacity: 0; }
+    .res-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Lang selector */
+    .res-nav-right { display: flex; align-items: center; gap: 10px; margin-left: auto; }
+    .res-lang-sel { position: relative; }
+    .res-lang-btn {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 600; color: #475569;
+      background: none; border: 1px solid var(--border);
+      border-radius: 8px; padding: 7px 12px; cursor: pointer;
+      transition: border-color 0.15s; font-family: inherit;
+    }
+    .res-lang-btn:hover { border-color: var(--blue-light); }
+    .res-lang-menu {
+      position: absolute; right: 0; top: calc(100% + 6px);
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius); min-width: 148px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      display: none; z-index: 999; overflow: hidden;
+    }
+    .res-lang-menu.show { display: block; }
+    .res-lang-item {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 14px; font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: background 0.1s; font-family: inherit;
+    }
+    .res-lang-item:hover { background: var(--light); }
+    .res-lang-item.active { background: #eff6ff; color: var(--blue); font-weight: 700; }
+
+    /* Mobile menu */
+    .res-mob-menu {
+      position: fixed; inset: 0; background: #fff; z-index: 400;
+      padding: 0 24px 24px;
+      transform: translateX(-100%); transition: transform 0.3s ease;
+      display: flex; flex-direction: column;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+    .res-mob-menu.open { transform: none; }
+    .res-mob-top {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; border-bottom: 1px solid var(--border); margin-bottom: 20px;
+    }
+    .res-mob-menu a {
+      display: block; font-size: 17px; font-weight: 600; color: var(--dark);
+      padding: 13px 0; border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
+    .res-mob-menu a:hover { color: var(--blue); }
+    .res-mob-langs {
+      display: flex; gap: 8px; margin-top: 20px; flex-wrap: wrap;
+    }
+    .res-mob-lang {
+      font-size: 13px; font-weight: 600; padding: 8px 14px;
+      border: 1px solid var(--border); border-radius: 8px;
+      cursor: pointer; background: #fff; transition: 0.15s;
+      font-family: inherit;
+    }
+    .res-mob-lang.active,
+    .res-mob-lang:hover { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+    /* Push content below nav */
+    body { padding-top: 70px; }
+</style>
+<link rel="preload" href="logo-rentantilles.webp" as="image" fetchpriority="high">
+</head>
+<body class="bg-gray-50 min-h-screen">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDXFKW9H"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<!-- ═══════════════ NAV ═══════════════ -->
+<nav class="res-nav">
+  <div class="res-nav-inner">
+    <button class="res-hamburger" id="resHambBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="/" class="res-logo">
+      <img src="logo-rentantilles.webp" alt="go4island.com" width="120" height="54" fetchpriority="high">
+    </a>
+    <div class="res-nav-right">
+      <div class="res-lang-sel">
+        <button class="res-lang-btn" id="resLangBtn">
+          <span id="resFlagEl">🇪🇸</span>
+          <span id="resCodeEl">ES</span>
+          <svg width="9" height="9" viewbox="0 0 10 6" fill="none" style="opacity:.45;flex-shrink:0;"><path d="M1 1l4 4 4-4" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div class="res-lang-menu" id="resLangMenu">
+          <div class="res-lang-item" data-lang="es">🇪🇸 Español</div>
+          <div class="res-lang-item" data-lang="en">🇬🇧 English</div>
+          <div class="res-lang-item" data-lang="fr">🇫🇷 Français</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ MOBILE MENU ═══════════════ -->
+<div class="res-mob-menu" id="resMobMenu">
+  <div class="res-mob-top">
+   
+    <button id="resMobClose" style="background:none;border:1px solid #e2e8f0;border-radius:8px;width:36px;height:36px;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;color:#475569;">✕</button>
+  </div>
+  <a href="index.html" data-i18n="navHome">Inicio</a>
+  <a href="ibiza.html">🏝️ Cars in Ibiza</a>
+  <a href="mallorca.html">🏝️ Cars in Mallorca</a>
+  <a href="menorca.html">🏝️ Cars in Menorca</a>
+  <a href="tenerife.html">🏝️ Cars in Tenerife</a>
+  <a href="legal.html" data-i18n="navConditions">Condiciones</a>
+  <div class="res-mob-langs">
+    <button class="res-mob-lang" data-lang="es">🇪🇸 ES</button>
+    <button class="res-mob-lang" data-lang="en">🇬🇧 EN</button>
+    <button class="res-mob-lang" data-lang="fr">🇫🇷 FR</button>
+  </div>
+</div>
+
+<div class="max-w-7xl mx-auto px-6 py-10">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+   <!-- COLUNA ESQUERDA - CARRO -->
+<div class="bg-white rounded-lg shadow-md p-6">
+
+  <img width="400" height="267" loading="lazy" id="carImageDisplay" class="w-full object-contain mb-4" src="" alt="Carro">
+
+  <h2 id="carNameDisplay" class="text-xl font-bold text-center">Carro</h2>
+  
+
+  <div class="flex items-center justify-center text-green-600 font-medium">
+    ⛽ <span data-i18n="res_fuel_policy">Política de combustible: Lleno / Lleno</span>
+  </div>
+
+  <hr class="my-6">
+
+  <h3 class="font-semibold mb-2"><span data-i18n="res_destination">Destino</span></h3>
+  <div class="space-y-3 text-gray-700">
+    <div>📍 <span id="pickupBlock"></span></div>
+  </div>
+
+  <!-- EXCELENTE RELAÇÃO QUALIDADE-PREÇO -->
+  <div class="mt-6 border border-green-400 bg-green-50 rounded-lg p-4 relative">
+    <div class="absolute -top-3 left-8 w-0 h-0 
+                border-l-8 border-r-8 border-b-8 
+                border-l-transparent border-r-transparent border-b-green-400">
+    </div>
+    <div class="flex items-start gap-4">
+      <div class="flex-shrink-0 w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white text-xl">
+        👍
+      </div>
+      <div class="text-green-700">
+        <h4 class="font-bold mb-1"><span data-i18n="res_quality">Excelente relación calidad-precio</span></h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROTEÇÃO DA FRANQUIA -->
+  <div class="mt-6 bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+    <div class="flex justify-center">
+      <span class="bg-green-600 text-white text-sm font-semibold px-4 py-1 rounded-b-lg">
+        <span data-i18n="res_limited_offer">Oferta limitada 2026</span>
+      </span>
+    </div>
+    <div class="bg-green-50 text-center py-4 border-b">
+      <h3 class="text-lg font-bold text-gray-800">
+        <span data-i18n="res_franchise_zero">Franquicia 0€</span>
+      </h3>
+    </div>
+    <div class="p-5 space-y-4 text-center">
+      <div class="bg-green-50 text-center py-4 border-b">
+        <h3 class="text-lg font-bold text-gray-800"><span data-i18n="res_deposit_label">Depósito</span></h3>
+        <span class="text-2xl font-bold text-green-600">0 €</span>
+      </div>
+      <div class="text-gray-700 font-medium"></div>
+    </div>
+  </div>
+
+</div> <!-- FECHA COLUNA ESQUERDA -->
+
+
+    <!-- COLUNA DIREITA - FORM + DADOS -->
+    <div class="lg:col-span-2 space-y-6">
+
+      <!-- BARRA VERDE -->
+      <div class="flex items-center gap-3 bg-green-100 border border-green-300 text-green-700 p-4 rounded-lg">
+        🔄
+        <span class="font-medium">
+          <span data-i18n="res_instant">Reserva inmediata — Recibirás una confirmación de tu reserva de inmediato.</span>
+        </span>
+      </div>
+
+      <!-- DADOS RESERVA -->
+<div class="bg-white rounded-lg shadow-md p-4 md:p-6">
+
+  <div class="flex justify-between items-center mb-4 md:mb-6">
+    <h2 class="text-base md:text-xl font-bold flex items-center gap-2">
+      <span data-i18n="res_booking_data">🚗 Datos de la reserva</span>
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
+    <div>
+      <h4 class="font-semibold text-sm md:text-base mb-1">
+        <span data-i18n="res_vehicle_return">📍 Entrega del vehículo</span>
+      </h4>
+      <p id="returnBlock" class="text-xs md:text-gray-700"></p>
+      <p class="text-xs md:text-sm text-gray-500"><span data-i18n="res_outside_airport">Fuera del aeropuerto</span></p>
+      <p class="text-xs md:text-sm text-gray-500" id="pickupTimeBlock"></p>
+    </div>
+  </div>
+
+  <hr class="my-3 md:my-4">
+
+  <div class="flex justify-between mb-2">
+    <span class="text-sm md:text-base"><span data-i18n="res_car_rental_price">Alquiler del vehículo:</span></span>
+    <span id="priceDisplay" class="font-semibold text-sm md:text-base">0.00€</span>
+  </div>
+
+<div class="flex justify-between items-start mb-4 md:mb-6">
+  <div>
+    <div class="text-sm md:text-base font-medium">
+      <span data-i18n="res_insurance_label">Seguro a todo riesgo</span>
+    </div>
+    <div class="text-sm text-gray-600">
+      ✅ Incluido (0 € a pagar en caso de reclamación)
+    </div>
+  </div>
+  <span class="text-gray-700 text-sm md:text-base whitespace-nowrap ml-4">
+    0,00€
+  </span>
+</div>
+
+<div class="flex justify-between items-start mb-4 md:mb-6">
+  <div>
+    <div class="text-sm md:text-base font-medium">
+      <span data-i18n="res_franchise_label">Franquicia</span>
+    </div>
+    <div class="text-sm text-gray-600">
+      ✅ Incluido
+    </div>
+  </div>
+  <span class="text-gray-700 text-sm md:text-base whitespace-nowrap ml-4">
+    0,00€
+  </span>
+</div>
+
+<div class="flex justify-between items-start mb-4 md:mb-6">
+  <div>
+    <div class="text-sm md:text-base font-medium">
+      <span data-i18n="res_km_label">Kilometraje ilimitado</span>
+    </div>
+    <div class="text-sm text-gray-600">
+      ✅ Incluido
+    </div>
+  </div>
+  <span class="text-gray-700 text-sm md:text-base whitespace-nowrap ml-4">
+    0,00€
+  </span>
+</div>
+
+<div class="flex justify-between items-start mb-4 md:mb-6">
+  <div>
+    <div class="text-sm md:text-base font-medium">
+      <span data-i18n="res_cancel_label">Cancelación gratuita</span>
+    </div>
+    <div class="text-sm text-gray-600">
+      ✅ Incluido
+    </div>
+  </div>
+  <span class="text-gray-700 text-sm md:text-base whitespace-nowrap ml-4">
+    0,00€
+  </span>
+</div>
+
+<div class="flex justify-between items-start mb-4 md:mb-6">
+  <div>
+    <div class="text-sm md:text-base font-medium">
+      Depósito
+    </div>
+    <div class="text-sm text-gray-600">
+      ✅ Incluido (No se requiere impresión de tarjeta de crédito para recoger su vehículo)
+    </div>
+  </div>
+  <span class="text-gray-700 text-sm md:text-base whitespace-nowrap ml-4">
+    0,00€
+  </span>
+</div>
+  <div class="bg-green-600 text-white p-2 md:p-4 rounded-lg flex justify-between items-center gap-2 md:gap-4">
+    <span class="text-sm md:text-lg font-semibold">
+      <span data-i18n="res_pay_online">Paga online ahora</span>
+    </span>
+    <span id="payNowPrice" class="text-lg md:text-2xl font-bold">0.00€</span>
+  </div>
+
+
+<!-- TIMER SECTION -->
+<div class="w-full border-b-2 border-red-500 bg-white py-4">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-center gap-3 text-gray-700">
+    <span class="text-xl">⏱️</span>
+    <span id="timerText" class="text-sm md:text-base">
+      <span id="timerPrefix" data-i18n="res_timer_prefix">Faltan</span>
+      <span id="timerMinutes" class="text-red-600 font-bold">10</span>:<span id="timerSeconds" class="text-red-600 font-bold">00</span>
+      <span id="timerSuffix" data-i18n="res_timer_suffix">minutos para asegurar este precio</span>
+    </span>
+  </div>
+</div>
+
+      <!-- FORMULÁRIO -->
+      <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+        <div class="p-6 sm:p-8">
+
+        <!-- Local -->
+      <form id="reservationForm" class="space-y-6">
+          <div class="space-y-2">
+  <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_pickup_location_label">Punto de recogida</span></label>
+  <input type="text" name="pickupLocation" id="pickupLocation" readonly="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+</div>
+
+        <!-- Viatura -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_car_select_label">Vehículo seleccionado</span></label>
+          <select id="carInput" name="car" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+            <option value="" data-i18n="res_car_placeholder">-- Elige un vehículo --</option>
+          </select>
+        </div>
+
+        <!-- Datas -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_checkin_label">Fecha y hora de inicio</span></label>
+            <input type="datetime-local" id="checkIn" min="2026-07-01T00:00" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+          </div>
+          <div class="space-y-2">
+            <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_checkout_label">Fecha y hora de fin</span></label>
+            <input type="datetime-local" id="checkOut" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+          </div>
+        </div>
+
+        <!-- Número de voo -->
+<div class="space-y-2">
+  <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_flight_label">Número de vuelo</span></label>
+  <input type="text" name="flightNumber" id="flightNumberInput" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus" placeholder="Ex: AF7423">
+</div>
+
+<!-- Equipamentos gratuitos -->
+<div class="space-y-3">
+  <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_free_equipment">Equipamiento gratuito</span></label>
+  <div class="flex items-center space-x-3">
+    <input type="checkbox" name="babySeat" value="Oui" class="h-5 w-5 text-blue-600 rounded">
+    <label class="text-gray-700"><span data-i18n="res_baby_seat">Silla de bebé (desde el nacimiento hasta 3 años)</span></label>
+  </div>
+  <div class="flex items-center space-x-3">
+    <input type="checkbox" name="boosterSeat" value="Oui" class="h-5 w-5 text-blue-600 rounded">
+    <label class="text-gray-700"><span data-i18n="res_booster">Alzador (a partir de 3 años)</span></label>
+  </div>
+  <div class="flex items-center space-x-3">
+    <input type="checkbox" name="stroller" value="Oui" class="h-5 w-5 text-blue-600 rounded">
+    <label class="text-gray-700"><span data-i18n="res_stroller">Cochecito de bebé</span></label>
+  </div>
+</div>
+
+        <!-- Nome -->
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_full_name">Nombre completo</span></label>
+          <input type="text" name="nom" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+        </div>
+
+        <!-- Nome do hotel -->
+        <div class="space-y-2" id="hotelNameBlock" style="display:none;">
+          <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_hotel_name">🏨 Nombre del hotel</span></label>
+          <input type="text" name="hotelName" id="hotelNameInput" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus" placeholder="Ex: Hotel Bairro Alto">
+        </div>
+
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_email">Email</span></label>
+          <input type="email" name="email" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+        </div>
+        <div class="space-y-2">
+          <label class="block text-sm font-medium text-gray-700"><span data-i18n="res_phone">Teléfono</span></label>
+          <input type="tel" name="telephone" required="" class="block w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg input-focus">
+        </div>
+
+        <!-- Total -->
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <div class="flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-800"><span data-i18n="res_total">Total:</span></span>
+            <span id="total" class="text-2xl font-bold text-blue-600">0 €</span>
+          </div>
+        </div>
+
+        <!-- Botão Pagar -->
+        <button id="payButton" type="button" class="w-full py-4 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg">
+          <span data-i18n="res_pay_btn">Reservar y pagar</span>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════ TRANSLATIONS ═══════════════ -->
+<script>
+window.translations = {
+  "es": {
+    "navHome": "Inicio",
+    "navConditions": "Condiciones",
+    "res_similar": "o similar",
+    "res_fuel_policy": "Política de combustible: Lleno / Lleno",
+    "res_destination": "Destino",
+    "res_quality": "Excelente relación calidad-precio",
+    "res_limited_offer": "Oferta limitada 2026",
+    "res_franchise_zero": "Franquicia 0€",
+    "res_deposit_label": "Depósito",
+    "res_instant": "Reserva inmediata — Recibirás una confirmación de tu reserva de inmediato.",
+    "res_booking_data": "🚗 Datos de la reserva",
+    "res_vehicle_return": "📍 Entrega del vehículo",
+    "res_outside_airport": "Fuera del aeropuerto",
+    "res_car_rental_price": "Alquiler del vehículo:",
+    "res_insurance_label": "Seguro a todo riesgo",
+    "res_franchise_label": "Franquicia",
+    "res_km_label": "Kilometraje ilimitado",
+    "res_cancel_label": "Cancelación gratuita",
+    "res_pay_online": "Paga online ahora",
+    "res_timer_prefix": "Faltan",
+    "res_timer_suffix": "minutos para asegurar este precio",
+    "res_timer_expired": "El precio ya no está garantizado. Por favor, actualiza la página.",
+    "res_pickup_location_label": "Punto de recogida",
+    "res_car_select_label": "Vehículo seleccionado",
+    "res_car_placeholder": "-- Elige un vehículo --",
+    "res_checkin_label": "Fecha y hora de inicio",
+    "res_checkout_label": "Fecha y hora de fin",
+    "res_flight_label": "Número de vuelo",
+    "res_flight_placeholder": "Ej: IB1234",
+    "res_free_equipment": "Equipamiento gratuito",
+    "res_baby_seat": "Silla de bebé (desde el nacimiento hasta 3 años)",
+    "res_booster": "Alzador (a partir de 3 años)",
+    "res_stroller": "Cochecito de bebé",
+    "res_full_name": "Nombre completo",
+    "res_hotel_name": "🏨 Nombre del hotel",
+    "res_hotel_placeholder": "Ej: Hotel Ibiza Gran",
+    "res_email": "Email",
+    "res_phone": "Teléfono",
+    "res_total": "Total:",
+    "res_pay_btn": "Reservar y pagar",
+    "res_loading": "Redirigiendo al pago seguro…",
+    "res_alert_fill": "Por favor, completa todos los campos obligatorios.",
+    "res_alert_dest": "Por favor, elige un destino.",
+    "res_err_payment": "Error: enlace de pago no recibido.",
+    "res_err_server": "Error al conectar con el servidor de pago.",
+    "res_hours_label": "Horario",
+    "point_hotel": "Entrega en el Hotel"
+  },
+  "en": {
+    "navHome": "Home",
+    "navConditions": "Terms",
+    "res_similar": "or similar",
+    "res_fuel_policy": "Fuel policy: Full / Full",
+    "res_destination": "Destination",
+    "res_quality": "Excellent value for money",
+    "res_limited_offer": "Limited offer 2026",
+    "res_franchise_zero": "€0 excess",
+    "res_deposit_label": "Deposit",
+    "res_instant": "Instant booking — A booking confirmation will be sent immediately.",
+    "res_booking_data": "🚗 Booking details",
+    "res_vehicle_return": "📍 Vehicle return",
+    "res_outside_airport": "Off airport",
+    "res_car_rental_price": "Vehicle rental:",
+    "res_insurance_label": "Comprehensive insurance",
+    "res_franchise_label": "Excess",
+    "res_km_label": "Unlimited mileage",
+    "res_cancel_label": "Free cancellation",
+    "res_pay_online": "Pay online now",
+    "res_timer_prefix": "",
+    "res_timer_suffix": "minutes left to secure this price",
+    "res_timer_expired": "This price is no longer guaranteed. Please refresh the page.",
+    "res_pickup_location_label": "Pickup location",
+    "res_car_select_label": "Selected vehicle",
+    "res_car_placeholder": "-- Choose a vehicle --",
+    "res_checkin_label": "Start date and time",
+    "res_checkout_label": "End date and time",
+    "res_flight_label": "Flight number",
+    "res_flight_placeholder": "e.g. IB1234",
+    "res_free_equipment": "Free equipment",
+    "res_baby_seat": "Baby seat (from birth to 3 years)",
+    "res_booster": "Booster seat (from 3 years)",
+    "res_stroller": "Pushchair / Stroller",
+    "res_full_name": "Full name",
+    "res_hotel_name": "🏨 Hotel name",
+    "res_hotel_placeholder": "e.g. Ibiza Gran Hotel",
+    "res_email": "Email",
+    "res_phone": "Phone",
+    "res_total": "Total:",
+    "res_pay_btn": "Book and pay",
+    "res_loading": "Redirecting to secure payment…",
+    "res_alert_fill": "Please fill in all required fields.",
+    "res_alert_dest": "Please choose a destination.",
+    "res_err_payment": "Error: payment link not received.",
+    "res_err_server": "Error connecting to payment server.",
+    "res_hours_label": "Hours",
+    "point_hotel": "Hotel Delivery"
+  },
+  "fr": {
+    "navHome": "Accueil",
+    "navConditions": "Conditions",
+    "res_similar": "ou similaire",
+    "res_fuel_policy": "Politique carburant : Plein / Plein",
+    "res_destination": "Destination",
+    "res_quality": "Excellent rapport qualité-prix",
+    "res_limited_offer": "Offre limitée 2026",
+    "res_franchise_zero": "Franchise à 0€",
+    "res_deposit_label": "Caution",
+    "res_instant": "Réservation immédiate — Une confirmation de votre réservation sera envoyée immédiatement.",
+    "res_booking_data": "🚗 Détails de la réservation",
+    "res_vehicle_return": "📍 Restitution du véhicule",
+    "res_outside_airport": "Hors aéroport",
+    "res_car_rental_price": "Location du véhicule :",
+    "res_insurance_label": "Assurance tous risques",
+    "res_franchise_label": "Franchise",
+    "res_km_label": "Kilométrage illimité",
+    "res_cancel_label": "Annulation gratuite",
+    "res_pay_online": "Payez en ligne maintenant",
+    "res_timer_prefix": "Il reste",
+    "res_timer_suffix": "minutes pour garantir ce prix",
+    "res_timer_expired": "Le prix n'est plus garanti. Veuillez actualiser la page.",
+    "res_pickup_location_label": "Lieu de prise en charge",
+    "res_car_select_label": "Véhicule sélectionné",
+    "res_car_placeholder": "-- Choisissez un véhicule --",
+    "res_checkin_label": "Date et heure de début",
+    "res_checkout_label": "Date et heure de fin",
+    "res_flight_label": "Numéro de vol",
+    "res_flight_placeholder": "Ex : IB1234",
+    "res_free_equipment": "Équipements gratuits",
+    "res_baby_seat": "Siège bébé (de la naissance à 3 ans)",
+    "res_booster": "Rehausseur (à partir de 3 ans)",
+    "res_stroller": "Poussette",
+    "res_full_name": "Nom complet",
+    "res_hotel_name": "🏨 Nom de l'hôtel",
+    "res_hotel_placeholder": "Ex : Hôtel Ibiza Gran",
+    "res_email": "E-mail",
+    "res_phone": "Téléphone",
+    "res_total": "Total :",
+    "res_pay_btn": "Réserver et payer",
+    "res_loading": "Redirection vers le paiement sécurisé…",
+    "res_alert_fill": "Veuillez remplir tous les champs obligatoires.",
+    "res_alert_dest": "Veuillez choisir une destination.",
+    "res_err_payment": "Erreur : lien de paiement non reçu.",
+    "res_err_server": "Erreur lors de la connexion au serveur de paiement.",
+    "res_hours_label": "Heures",
+    "point_hotel": "Livraison à l'hôtel"
+  }
+};
+</script>
+
+<script>
+/* ══════════════════════════════════════════
+   SISTEMA DE IDIOMAS — sincronizado com todas as páginas
+   Lê localStorage('etc-lang') definido em qualquer página do site
+   ══════════════════════════════════════════ */
+(function() {
+  const flags = { es:'🇪🇸', en:'🇬🇧', fr:'🇫🇷' };
+  const codes  = { es:'ES',  en:'EN',  fr:'FR' };
+
+  function detectLang() {
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang && window.translations[urlLang]) return urlLang;
+    const stored = localStorage.getItem('go4island_lang');
+    if (stored && window.translations[stored]) return stored;
+    const browser = (navigator.language || navigator.userLanguage || '').slice(0,2).toLowerCase();
+    if (window.translations[browser]) return browser;
+    return 'es';
+  }
+
+  let lang = detectLang();
+
+  window.setLang = function(l) {
+    if (!window.translations[l]) l = 'es';
+    lang = l;
+    localStorage.setItem('go4island_lang', l);
+    document.documentElement.lang = l;
+    const t = window.translations[l];
+
+    // data-i18n text
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const k = el.dataset.i18n;
+      if (t[k] !== undefined) el.textContent = t[k];
+    });
+
+    // Placeholders
+    const flightInput = document.getElementById('flightNumberInput');
+    if (flightInput && t['res_flight_placeholder']) flightInput.placeholder = t['res_flight_placeholder'];
+    const hotelInput = document.getElementById('hotelNameInput');
+    if (hotelInput && t['res_hotel_placeholder']) hotelInput.placeholder = t['res_hotel_placeholder'];
+    const carFirst = document.querySelector('#carInput option[data-i18n="res_car_placeholder"]');
+    if (carFirst && t['res_car_placeholder']) carFirst.textContent = t['res_car_placeholder'];
+
+    // Nav flag/code
+    const flagEl = document.getElementById('resFlagEl');
+    const codeEl = document.getElementById('resCodeEl');
+    if (flagEl) flagEl.textContent = flags[l];
+    if (codeEl) codeEl.textContent = codes[l];
+
+    // Active state desktop items
+    document.querySelectorAll('.res-lang-item').forEach(el => {
+      el.classList.toggle('active', el.dataset.lang === l);
+    });
+    // Active state mobile buttons
+    document.querySelectorAll('.res-mob-lang').forEach(el => {
+      el.classList.toggle('active', el.dataset.lang === l);
+    });
+  };
+
+  window.getCurrentLang = function() { return lang; };
+
+  // Apply on load
+  document.addEventListener('DOMContentLoaded', function() {
+    window.setLang(lang);
+
+    // ── DESKTOP LANG DROPDOWN ──
+    const lBtn  = document.getElementById('resLangBtn');
+    const lMenu = document.getElementById('resLangMenu');
+    if (lBtn && lMenu) {
+      lBtn.addEventListener('click', e => { e.stopPropagation(); lMenu.classList.toggle('show'); });
+      document.addEventListener('click', () => lMenu.classList.remove('show'));
+      lMenu.addEventListener('click', e => e.stopPropagation());
+      lMenu.querySelectorAll('.res-lang-item').forEach(el => {
+        el.addEventListener('click', () => { window.setLang(el.dataset.lang); lMenu.classList.remove('show'); });
+      });
+    }
+
+    // ── MOBILE LANG BUTTONS ──
+    document.querySelectorAll('.res-mob-lang').forEach(btn => {
+      btn.addEventListener('click', () => window.setLang(btn.dataset.lang));
+    });
+
+    // ── HAMBURGER ──
+    const hambBtn  = document.getElementById('resHambBtn');
+    const mobMenu  = document.getElementById('resMobMenu');
+    const mobClose = document.getElementById('resMobClose');
+    if (hambBtn && mobMenu) {
+      function openMob()  { hambBtn.classList.add('open'); mobMenu.classList.add('open'); document.body.style.overflow='hidden'; }
+      function closeMob() { hambBtn.classList.remove('open'); mobMenu.classList.remove('open'); document.body.style.overflow=''; }
+      hambBtn.addEventListener('click', openMob);
+      if (mobClose) mobClose.addEventListener('click', closeMob);
+      mobMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMob));
+    }
+
+    // ── NAV SHADOW ON SCROLL ──
+    const navEl = document.querySelector('nav.res-nav');
+    if (navEl) {
+      window.addEventListener('scroll', () => {
+        navEl.style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
+      }, {passive:true});
+    }
+  });
+})();
+</script>
+
+<script>
+/* ══════════════════════════════════════════
+   PREENCHIMENTO AUTOMÁTICO — dados da página anterior
+   ══════════════════════════════════════════ */
+(function() {
+  // Executa imediatamente após o DOM estar pronto
+  function fillFromURL() {
+    var params = new URLSearchParams(window.location.search);
+
+    function get(k) { return params.get(k) || ''; }
+    function extractTime(v) { return v && v.indexOf('T') > -1 ? v.split('T')[1].slice(0,5) : ''; }
+
+    // 1. CARRO
+    var car = get('car');
+    if (car) {
+      var carInput = document.getElementById('carInput');
+      if (carInput) {
+        var opt = document.createElement('option');
+        opt.value = car; opt.textContent = car; opt.selected = true;
+        carInput.appendChild(opt);
+      }
+      var carNameDisplay = document.getElementById('carNameDisplay');
+      if (carNameDisplay) carNameDisplay.textContent = car;
+    }
+
+    // 2. IMAGEM
+    var carImage = get('carImage');
+    if (carImage) {
+      var imgEl = document.getElementById('carImageDisplay');
+      if (imgEl) { imgEl.src = decodeURIComponent(carImage); imgEl.style.display = 'block'; }
+    }
+
+    // 3. DATAS
+    var checkIn  = get('checkIn');
+    var checkOut = get('checkOut');
+    var ciEl = document.getElementById('checkIn');
+    var coEl = document.getElementById('checkOut');
+    if (checkIn && checkIn.indexOf('-') > -1 && ciEl) {
+      ciEl.value = checkIn.length > 16 ? checkIn.slice(0,16) : checkIn;
+      ciEl.disabled = true;
+    }
+    if (checkOut && checkOut.indexOf('-') > -1 && coEl) {
+      coEl.value = checkOut.length > 16 ? checkOut.slice(0,16) : checkOut;
+      coEl.disabled = true;
+    }
+
+    // 4. HORÁRIOS
+    var pickupTime = get('pickupTime') || extractTime(checkIn);
+    var returnTime = get('returnTime') || extractTime(checkOut);
+    var timeBlock = document.getElementById('pickupTimeBlock');
+    if (timeBlock && pickupTime) {
+      var lang = localStorage.getItem('go4island_lang') || 'es';
+      var trans = (window.translations && window.translations[lang]) || {};
+      var label = trans['res_hours_label'] || 'Horário';
+      timeBlock.textContent = (pickupTime !== returnTime && returnTime)
+        ? label + ': ' + pickupTime + ' → ' + returnTime
+        : label + ': ' + pickupTime;
+    }
+
+    // 5. PREÇO
+    var price = get('price');
+    if (price) {
+      var num = parseFloat(price.replace(',', '.'));
+      if (!isNaN(num) && num > 0) {
+        var fmt = num.toFixed(2) + ' €';
+        var totalEl = document.getElementById('total');
+        var priceDisplay = document.getElementById('priceDisplay');
+        var payNowPrice = document.getElementById('payNowPrice');
+        if (totalEl)      totalEl.textContent      = fmt;
+        if (priceDisplay) priceDisplay.textContent = fmt;
+        if (payNowPrice)  payNowPrice.textContent  = fmt;
+      }
+    }
+
+    // 6. LOCAL
+    var loc = get('pickupLocation') || get('returnLocation');
+    if (loc) {
+      var locInput = document.getElementById('pickupLocation');
+      var pickupBlock = document.getElementById('pickupBlock');
+      var returnBlock = document.getElementById('returnBlock');
+      if (locInput)    locInput.value        = loc;
+      if (pickupBlock) pickupBlock.textContent = loc;
+      if (returnBlock) returnBlock.textContent = loc;
+
+      // Hotel delivery
+      var isHotel = loc.toLowerCase().indexOf('hotel') > -1 || loc.toLowerCase().indexOf('hôtel') > -1;
+      if (isHotel) {
+        var hotelBlock = document.getElementById('hotelNameBlock');
+        var hotelInput = document.getElementById('hotelNameInput');
+        if (hotelBlock) hotelBlock.style.display = 'block';
+        if (hotelInput) hotelInput.required = true;
+      }
+    }
+
+    // 7. Wrap setLang to keep horário label translated
+    if (typeof window.setLang === 'function' && pickupTime) {
+      var _origFill = window.setLang;
+      window.setLang = function(l) {
+        _origFill(l);
+        var tb = document.getElementById('pickupTimeBlock');
+        if (tb) {
+          var tr = (window.translations && window.translations[l]) || {};
+          var lbl = tr['res_hours_label'] || 'Horário';
+          tb.textContent = (pickupTime !== returnTime && returnTime)
+            ? lbl + ': ' + pickupTime + ' → ' + returnTime
+            : lbl + ': ' + pickupTime;
+        }
+      };
+    }
+
+    // 8. BOTÃO PAGAMENTO
+    var payButton = document.getElementById('payButton');
+    if (payButton) {
+      payButton.addEventListener('click', async function() {
+        var lang = typeof window.getCurrentLang === 'function' ? window.getCurrentLang() : 'es';
+        var t = (window.translations && window.translations[lang]) || window.translations.es || {};
+
+        var carInput2 = document.getElementById('carInput');
+        var totalEl2  = document.getElementById('total');
+        var ciEl2     = document.getElementById('checkIn');
+        var coEl2     = document.getElementById('checkOut');
+        var locEl2    = document.getElementById('pickupLocation');
+
+        var clientName = (document.querySelector('[name="nom"]')       || {}).value || '';
+        var email      = (document.querySelector('[name="email"]')     || {}).value || '';
+        var carVal     = carInput2 ? carInput2.value : '';
+
+        if (!clientName || !email || !carVal) {
+          return alert(t['res_alert_fill'] || 'Por favor, preencha todos os campos obrigatórios.');
+        }
+
+        try {
+          var totalStr = totalEl2 ? totalEl2.textContent : '0';
+          var amount   = parseFloat(totalStr.replace(/[^\d.,]/g, '').replace(',', '.')) || 0;
+
+          var response = await fetch('/create-payment.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              amount:         amount,
+              description:    'Reservation voiture - ' + carVal,
+              car:            carVal,
+              email:          email,
+              flightNumber:   (document.querySelector('[name="flightNumber"]') || {}).value || '',
+              babySeat:       document.querySelector('[name="babySeat"]')    && document.querySelector('[name="babySeat"]').checked    ? 'Oui' : 'Non',
+              boosterSeat:    document.querySelector('[name="boosterSeat"]') && document.querySelector('[name="boosterSeat"]').checked ? 'Oui' : 'Non',
+              stroller:       document.querySelector('[name="stroller"]')    && document.querySelector('[name="stroller"]').checked    ? 'Oui' : 'Non',
+              nom:            clientName,
+              telephone:      (document.querySelector('[name="telephone"]')  || {}).value || '',
+              checkIn:        ciEl2  ? ciEl2.value  : '',
+              checkOut:       coEl2  ? coEl2.value  : '',
+              pickupLocation: locEl2 ? locEl2.value : '',
+              hotelName:      (document.querySelector('[name="hotelName"]')  || {}).value || ''
+            })
+          });
+
+          var data = await response.json();
+          if (!data.checkoutUrl) {
+            return alert(t['res_err_payment'] || 'Erro: link de pagamento nao recebido.');
+          }
+          window.location.href = data.checkoutUrl;
+
+        } catch(err) {
+          console.error(err);
+          var t2 = (window.translations && window.translations[lang]) || {};
+          alert(t2['res_err_server'] || 'Erro ao conectar ao servidor de pagamento.');
+        }
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fillFromURL);
+  } else {
+    fillFromURL();
+  }
+})();
+</script>
+
+<script>
+/* ══════════════════════════════════════════
+   TIMER — traduzido dinamicamente
+   ══════════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", () => {
+  const MINUTES = 10;
+  const minEl    = document.getElementById("timerMinutes");
+  const secEl    = document.getElementById("timerSeconds");
+  const prefixEl = document.getElementById("timerPrefix");
+  const suffixEl = document.getElementById("timerSuffix");
+  const textEl   = document.getElementById("timerText");
+
+  if (!minEl || !secEl || !textEl) return;
+
+  const STORAGE_KEY = "priceTimerEnd";
+  let endTime = localStorage.getItem(STORAGE_KEY);
+
+  if (!endTime) {
+    endTime = Date.now() + MINUTES * 60 * 1000;
+    localStorage.setItem(STORAGE_KEY, endTime);
+  } else {
+    endTime = parseInt(endTime, 10);
+  }
+
+  function updateTimer() {
+    const t    = window.translations[window.getCurrentLang()] || window.translations.es;
+    const now  = Date.now();
+    const diff = endTime - now;
+
+    if (diff <= 0) {
+      minEl.textContent = "00";
+      secEl.textContent = "00";
+      textEl.innerHTML = `<span class="text-red-600 font-bold">${t['res_timer_expired'] || 'O preço já não é garantido. Por favor, atualize a página.'}</span>`;
+      localStorage.removeItem(STORAGE_KEY);
+      return;
+    }
+
+    const minutes = Math.floor(diff / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+    minEl.textContent = String(minutes).padStart(2, "0");
+    secEl.textContent = String(seconds).padStart(2, "0");
+
+    // update prefix/suffix text from translations
+    if (prefixEl) prefixEl.textContent = t['res_timer_prefix'] || '';
+    if (suffixEl) suffixEl.textContent = t['res_timer_suffix'] || '';
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+});
+</script>
+
+<script>
+/* ══════════════════════════════════════════
+   LOADING OVERLAY
+   ══════════════════════════════════════════ */
+document.addEventListener("DOMContentLoaded", () => {
+  const loader = document.createElement("div");
+  loader.id = "pageLoader";
+  loader.innerHTML = `
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <p><span data-i18n="res_loading">Redirecionando para pagamento seguro…</span></p>
+    </div>
+  `;
+  document.body.appendChild(loader);
+
+  const style = document.createElement("style");
+  style.textContent = `
+    #pageLoader {
+      position: fixed; inset: 0;
+      background: rgba(255,255,255,0.95);
+      display: none; align-items: center; justify-content: center; z-index: 9999;
+    }
+    .loader-box { text-align: center; font-family: system-ui, sans-serif; color: #1e40af; }
+    .spinner {
+      width: 56px; height: 56px;
+      border: 6px solid #c7d2fe; border-top: 6px solid #2563eb;
+      border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  `;
+  document.head.appendChild(style);
+
+  // apply translation to loader text on lang change — re-run setLang after loader is appended
+  const origSetLang = window.setLang;
+  window.setLang = function(l) {
+    origSetLang(l);
+    // also translate loader text
+    const loaderSpan = loader.querySelector('[data-i18n="res_loading"]');
+    const t = window.translations[l] || window.translations.es;
+    if (loaderSpan && t['res_loading']) loaderSpan.textContent = t['res_loading'];
+  };
+
+  const payButton = document.getElementById("payButton");
+  if (payButton) {
+    payButton.addEventListener("click", () => {
+      document.getElementById("pageLoader").style.display = "flex";
+    });
+  }
+});
+</script>
+
+</div><!-- fecha lg:col-span-2 -->
+</div><!-- fecha grid -->
+</div><!-- fecha max-w-7xl -->
+
+</body>
+</html>
